@@ -18,22 +18,11 @@ class Utilisateurs implements UserInterface
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=180, unique=true)
+/**
+     * @ORM\Column(type="string", length=255)
      */
-    private $email;
-
-    /**
-     * @ORM\Column(type="json")
-     */
-    private $roles = [];
-
-    /**
-     * @var string The hashed password
-     * @ORM\Column(type="string")
-     */
-    private $password;
-
+    private $civilite;
+    
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -70,6 +59,16 @@ class Utilisateurs implements UserInterface
     private $pays;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $telephone;
+
+    /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $email;
+
+/**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $periode;
@@ -77,7 +76,23 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $telephone;
+    private $login;
+
+    /**
+     * @var string The hashed password
+     * @ORM\Column(type="string")
+     */
+    private $password;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $slug;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
 
     public function getId(): ?int
     {
@@ -264,6 +279,42 @@ class Utilisateurs implements UserInterface
     public function setTelephone(string $telephone): self
     {
         $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getCivilite(): ?string
+    {
+        return $this->civilite;
+    }
+
+    public function setCivilite(string $civilite): self
+    {
+        $this->civilite = $civilite;
+
+        return $this;
+    }
+
+    public function getLogin(): ?string
+    {
+        return $this->login;
+    }
+
+    public function setLogin(string $login): self
+    {
+        $this->login = $login;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
