@@ -2,12 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\UtilisateursRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use App\Repository\UtilisateursRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
-
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * @ORM\Entity(repositoryClass=UtilisateursRepository::class)
+ * @UniqueEntity("login")
  */
 class Utilisateurs implements UserInterface
 {
@@ -85,7 +89,8 @@ class Utilisateurs implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     * @Gedmo\Slug(fields={"login"})
      */
     private $slug;
 
@@ -93,6 +98,16 @@ class Utilisateurs implements UserInterface
      * @ORM\Column(type="json")
      */
     private $roles = [];
+
+    /**
+     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="utilisateur", orphanRemoval=true)
+     */
+    private $message;
+
+    public function __construct()
+    {
+        $this->message = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -315,6 +330,36 @@ class Utilisateurs implements UserInterface
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Messages[]
+     */
+    public function getMessage(): Collection
+    {
+        return $this->message;
+    }
+
+    public function addMessage(Messages $message): self
+    {
+        if (!$this->message->contains($message)) {
+            $this->message[] = $message;
+            $message->setUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessage(Messages $message): self
+    {
+        if ($this->message->removeElement($message)) {
+            // set the owning side to null (unless already changed)
+            if ($message->getUtilisateur() === $this) {
+                $message->setUtilisateur(null);
+            }
+        }
 
         return $this;
     }

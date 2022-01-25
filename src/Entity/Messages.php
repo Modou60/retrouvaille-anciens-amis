@@ -2,12 +2,18 @@
 
 namespace App\Entity;
 
-use App\Repository\MessagesRepository;
+use DateTimeInterface;
+use App\Entity\Utilisateurs;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\MessagesRepository;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=MessagesRepository::class)
+ * @UniqueEntity("titre")
  */
+
 class Messages
 {
     /**
@@ -31,6 +37,18 @@ class Messages
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $utilisateur;
+
+    /**
+     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     * @Gedmo\Slug(fields={"titre"})
+     */
+    private $slug;
 
     public function getId(): ?int
     {
@@ -69,6 +87,30 @@ class Messages
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?Utilisateurs
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(?Utilisateurs $utilisateur): self
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
