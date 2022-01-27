@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Bienvenu(e) à la page d'inscription de l'application!{% endblock %}
+
+{% block body %}
+
+<h1> L'inscription </h1>
+
+<br/><br/>
+
+<p> Veuillez remplir correctement ce formulaire </p>
+
+{{ form_start(utilisateurform1) }}
+
+<button type="submit" class="btn btn-success"> S'inscrire </button>
+{{ form_end(utilisateurform1) }}
+{% endblock %}
