@@ -29,19 +29,18 @@ class HomeController extends AbstractController
      */
     public function inscription(Request $request): Response
     {
-        $utilisateur = new Utilisateurs();
-        $form = $this->createForm(InscriptionType::class, $utilisateur);
+        $utilisateurs = new Utilisateurs();
+        $form = $this->createForm(InscriptionType::class , $utilisateurs);
         $form->handleRequest($request);
 
         // test pour la validité du formulaire et sa persistance
-        if ($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $manager = $this->getDoctrine()->getManager();
-            $manager->persist($utilisateur);
+            $manager->persist($utilisateurs);
             $manager->flush();
 
             // redirection de la page
-            // return $this->redirectToRoute('index');
+            return $this->redirectToRoute('index');
         }
 
         // envoie de la page vers twig
