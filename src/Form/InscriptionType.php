@@ -52,7 +52,7 @@ class InscriptionType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Utilisateurs::class ,
+            'data_class' => Utilisateurs::class,
         ]);
     }
 }
