@@ -3,18 +3,22 @@
 namespace App\Form;
 
 use App\Entity\Utilisateurs;
-
+use Doctrine\DBAL\Types\DateTimeType;
 use Doctrine\DBAL\Types\StringType;
-use Doctrine\DBAL\Types\TextType;
-
+use PhpParser\Node\Stmt\Label;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\FormTypeInterface;
-use Symfony\Component\Form\Extension\Validator\Constraints\Form;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType as TypeDateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Validator\Constraints\DateTime;
+
 
 class InscriptionType extends AbstractType
 {
@@ -40,7 +44,7 @@ class InscriptionType extends AbstractType
             'label' => 'Votre login',
             'required' => 'true'
         ])
-            ->add('password', PasswordType::class , [
+            ->add('password', PasswordType::class, [
             'label' => 'Votre mot de passe',
             'required' => 'true'
         ])
