@@ -3,11 +3,12 @@
 namespace App\DataFixtures;
 
 
+use DateTime;
+use App\Entity\Messages;
 use App\Entity\Utilisateurs;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\Security\Core\Role\Role;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 class UtilisateursFixtures extends Fixture
 {
@@ -47,8 +48,23 @@ $date = new DateTime();
             ->setPassword('motdepasse' . $i)
             ->setRoles(['ROLE_ADMIN']);
             $manager->persist($utilisateurs);    
-        }
+        
 
-        $manager->flush();
+    // je remplis les messages pour chaque utilisateur
+
+    for ($j = 1; $j <= 200; $j++)
+    {
+        $date = new DateTime();
+        $messages = new Messages();
+
+        $messages
+            ->setTitre('Titre numéro ' . $j)
+            ->setMessage('Message numéro ' . $j)
+            ->setCreatedAt($date)
+            ->setUtilisateur($utilisateurs);
+            $manager->persist($messages);
+    }
+}
+$manager->flush();
     }
 }

@@ -3,14 +3,17 @@
 namespace App\Controller;
 
 use App\Entity\Utilisateurs;
+use App\Form\InscriptionType;
+use App\Repository\UtilisateursRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-use App\Form\InscriptionType;
+
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use Laminas\Code\Scanner\Util;
 
 /**
  * @Route("/home")
@@ -22,8 +25,24 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('home/index.html.twig', [
+        
+        return $this->render('home/index.html.twig', []);
+    }
+
+    // liste de tous les utilisateurs
+    /**
+     * @Route("/indexListe", name="indexListe")
+     */
+    public function indexListe(): Response
+    {
+        $requette = $this->getDoctrine()->getRepository(Utilisateurs::class);
+        $utilisateurs = $requette->findAll();
+
+        // envoi à la page twig
+        return $this->render('utilisateur/index.html.twig', [
+            'utilisateurs' => $utilisateurs,
         ]);
+
     }
 
     // préparation du formulaire d'inscription et son affichage
@@ -38,7 +57,6 @@ class HomeController extends AbstractController
 
         // test pour la validité du formulaire et sa persistance
         if ($form->isSubmitted() && $form->isValid()) {
-            // $manager = $this->getDoctrine()->getManager();
             $manager->persist($utilisateurs);
             $manager->flush();
 
@@ -48,7 +66,7 @@ class HomeController extends AbstractController
 
         // envoie de la page vers twig
         return $this->render('home/inscription1.html.twig', [
-            'utilisateurs' => $utilisateur,
+            'utilisateurs' => $utilisateurs,
             'utilisateurform1' => $form->createView(),
         ]);
     }

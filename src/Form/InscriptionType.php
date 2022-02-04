@@ -5,16 +5,16 @@ namespace App\Form;
 use App\Entity\Utilisateurs;
 
 use Doctrine\DBAL\Types\StringType;
-use Doctrine\DBAL\Types\TextType;
-
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+
 use Symfony\Component\Form\FormTypeInterface;
-use Symfony\Component\Form\Extension\Validator\Constraints\Form;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Validator\Constraints\Form;
 
 class InscriptionType extends AbstractType
 {

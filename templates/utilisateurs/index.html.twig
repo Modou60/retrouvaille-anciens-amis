@@ -1,20 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello UtilisateursController!{% endblock %}
+{% block title %} La page des utilisateurs !{% endblock %}
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .example-wrapper {
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+    }
+
+    .example-wrapper code {
+        background: #F5F5F5;
+        padding: 2px 6px;
+    }
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Liste des utilisateurs de l'application✅</h1>
 
-    This friendly message is coming from:
+
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/modou/retrouvaille-anciens-amis/src/Controller/UtilisateursController.php'|file_link(0) }}">src/Controller/UtilisateursController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/modou/retrouvaille-anciens-amis/templates/utilisateurs/index.html.twig'|file_link(0) }}">templates/utilisateurs/index.html.twig</a></code></li>
+        {% for utilisateur in utilisateurs %}
+        <li> {{ utilisateur.civilite }} </li>
+        <li> {{ utilisateur.nom }} </li>
+        <li> {{ utilisateur.prenom }} </li>
+        <li> {{ utilisateur.dateNaiss|date("d/m/Y") }} </li>
+        <li> {{ utilisateur.adresse }} </li>
+        <li> {{ utilisateur.codePostal }} </li>
+        <li> {{ utilisateur.ville }} </li>
+        <li> {{ utilisateur.pays }} </li>
+        <li> {{ utilisateur.telephone }} </li>
+        <li> {{ utilisateur.email }} </li>
+        <li> {{ utilisateur.periode }} </li>
+        <li> {{ utilisateur.login }} </li>
+        <li> {{ utilisateur.password }} </li>
+        {% for role in utilisateur.roles %}
+        <li> {{ role }} </li>
+        {% endfor %}
+        {% for message in utilisateur.message %}
+        {{ message.titre }}
+        {% endfor %}
+        {% endfor %}
     </ul>
 </div>
 {% endblock %}

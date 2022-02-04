@@ -27,7 +27,13 @@ class Messages
      * @ORM\Column(type="string", length=255)
      */
     private $titre;
-
+	
+	/**
+     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     * @Gedmo\Slug(fields={"titre"})
+     */
+    private $slug;
+	
     /**
      * @ORM\Column(type="text")
      */
@@ -43,12 +49,6 @@ class Messages
      * @ORM\JoinColumn(nullable=false)
      */
     private $utilisateur;
-
-    /**
-     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
-     * @Gedmo\Slug(fields={"titre"})
-     */
-    private $slug;
 
     public function getId(): ?int
     {
