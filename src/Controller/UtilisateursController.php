@@ -2,19 +2,29 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Utilisateurs;
+use App\Repository\UtilisateursRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+
+/**
+ * @Route("/utilisateurs")
+ */
 class UtilisateursController extends AbstractController
 {
     /**
-     * @Route("/utilisateurs", name="utilisateurs")
+     * @Route("/", name="utilisateurs")
      */
-    public function index(): Response
+    public function index(UtilisateursRepository $utilisateursRepo): Response
     {
+        $utilisateursRepo = $this->getDoctrine()->getRepository(Utilisateurs::class);
+        $utilisateurs = $utilisateursRepo->findAll();
+
+        // affichage dans twig
         return $this->render('utilisateurs/index.html.twig', [
-            'controller_name' => 'UtilisateursController',
+            'utilisateurs' => $utilisateurs,
         ]);
-    }
+        }
 }

@@ -27,23 +27,16 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('home/index.html.twig', [
-        ]);
+        return $this->render('home/index.html.twig', []);
     }
 
     // affichage de tous les utilisateurs
     /**
      * @Route("/indexListe", name="indexListe")
      */
-    public function listeUsers(UtilisateursRepository $utilisateursRepo): Response
+    public function listeUsers(): Response
     {
-        $utilisateursRepo = $this->getDoctrine()->getRepository(Utilisateurs::class);
-        $utilisateurs = $utilisateursRepo->findAll();
-
-        // affichage dans twig
-        return $this->render('utilisateur/index.html.twig', [
-            'utilisateurs' => $utilisateurs,
-        ]);
+        return $this->redirectToRoute('utilisateurs');
     }
 
     // préparation du formulaire d'inscription et son affichage
@@ -53,7 +46,7 @@ class HomeController extends AbstractController
     public function inscription(Request $request): Response
     {
         $utilisateurs = new Utilisateurs();
-        $form = $this->createForm(InscriptionType::class , $utilisateurs);
+        $form = $this->createForm(InscriptionType::class, $utilisateurs);
         $form->handleRequest($request);
 
         // test pour la validité du formulaire et sa persistance

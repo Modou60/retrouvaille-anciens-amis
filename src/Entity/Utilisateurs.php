@@ -105,6 +105,11 @@ class Utilisateurs implements UserInterface
      */
     private $message;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
+
     public function __construct()
     {
         $this->message = new ArrayCollection();
@@ -361,6 +366,18 @@ class Utilisateurs implements UserInterface
                 $message->setUtilisateur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
 
         return $this;
     }
