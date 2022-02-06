@@ -46,7 +46,7 @@ class HomeController extends AbstractController
     public function inscription(Request $request): Response
     {
         $utilisateurs = new Utilisateurs();
-        $form = $this->createForm(InscriptionType::class, $utilisateurs);
+        $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
         $form->handleRequest($request);
 
         // test pour la validité du formulaire et sa persistance

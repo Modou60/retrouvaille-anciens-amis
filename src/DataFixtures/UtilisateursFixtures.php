@@ -30,12 +30,12 @@ $pays = ["Sénégal", "Maroc", "France"];
 shuffle($pays);
 $email = ["toto@free.fr", "M.ba@orange.sn", "d.fall@gmail.com", "lala@sfr.fr", "ssall@gmail.com", "soleil@orange.sn", "s.sene@yahoo.fr", "rara@yahoo.sn", "terre@orange.fr", "samfaye@gmail.com", "loumou@free.sn", "sarr@hotmail.fr"];
 shuffle($email);
-$date = new DateTime();
+
             $utilisateurs
             ->setCivilite($civilite[0])
             ->setNom($nom[0])
             ->setPrenom($prenom[0])
-            ->setDateNaiss($date)
+            ->setDateNaiss(new \DateTime())
             ->setAdresse('adresse' . $i)
             ->setVille($ville[0])
             ->setCodePostal('codepostal' . $i)
@@ -44,8 +44,8 @@ $date = new DateTime();
             ->setEmail($email[0] . $i)
             ->setPeriode('période' . $i)
             ->setLogin('login' . $i)
-            ->setPassword('motdepasse' . $i)
-            ->setRoles(['ROLE_ADMIN']);
+            ->setPassword('motdepasse' . $i);
+            // ->setRoles(['ROLE_ADMIN'])
             $manager->persist($utilisateurs);    
         }
 
