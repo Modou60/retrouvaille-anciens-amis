@@ -48,13 +48,13 @@ class AuthentificationAuthenticator extends AbstractFormLoginAuthenticator imple
     public function getCredentials(Request $request)
     {
         $credentials = [
-            'email' => $request->request->get('email'),
+            'login' => $request->request->get('login'),
             'password' => $request->request->get('password'),
             'csrf_token' => $request->request->get('_csrf_token'),
         ];
         $request->getSession()->set(
             Security::LAST_USERNAME,
-            $credentials['email']
+            $credentials['login']
         );
 
         return $credentials;
@@ -67,10 +67,10 @@ class AuthentificationAuthenticator extends AbstractFormLoginAuthenticator imple
             throw new InvalidCsrfTokenException();
         }
 
-        $user = $this->entityManager->getRepository(Utilisateurs::class)->findOneBy(['email' => $credentials['email']]);
+        $user = $this->entityManager->getRepository(Utilisateurs::class)->findOneBy(['login' => $credentials['login']]);
 
         if (!$user) {
-            throw new UsernameNotFoundException('Email could not be found.');
+            throw new UsernameNotFoundException('login could not be found.');
         }
 
         return $user;
@@ -95,7 +95,7 @@ class AuthentificationAuthenticator extends AbstractFormLoginAuthenticator imple
             return new RedirectResponse($targetPath);
         }
 
-        // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
+        return new RedirectResponse($this->urlGenerator->generate('index'));
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
