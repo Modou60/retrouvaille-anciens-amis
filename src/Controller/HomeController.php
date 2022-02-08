@@ -4,7 +4,7 @@ namespace App\Controller;
 
 
 
-use App\Entity\Utilisateurs;
+// use App\Entity\Utilisateurs;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,39 +31,4 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', []);
     }
 
-    // // affichage de tous les utilisateurs
-    // /**
-    //  * @Route("/indexListe", name="indexListe")
-    //  */
-    // public function listeUsers(): Response
-    // {
-    //     return $this->redirectToRoute('utilisateurs');
-    // }
-
-    // préparation du formulaire d'inscription et son affichage
-    /**
-     * @Route("/inscription", name="inscription", methods={"GET"})
-     */
-    public function inscription(): Response
-    {
-        // $utilisateurs = new Utilisateurs();
-        // $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
-        // $form->handleRequest($request);
-
-        // // test pour la validité du formulaire et sa persistance
-        // if ($form->isSubmitted() && $form->isValid()) {
-        //     $manager = $this->getDoctrine()->getManager();
-        //     $manager->persist($utilisateurs);
-        //     $manager->flush();
-
-            // redirection de la page
-            return $this->redirectToRoute('app_register');
-        // }
-
-    //     // envoie de la page vers twig
-    //     return $this->render('home/inscription1.html.twig', [
-    //         'utilisateurs' => $utilisateurs,
-    //         'utilisateurform1' => $form->createView(),
-    //     ]);
-     }
-}
+    }
