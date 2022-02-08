@@ -12,7 +12,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 /**
  * @ORM\Entity(repositoryClass=UtilisateursRepository::class)
- * @UniqueEntity("login")
+ * @UniqueEntity("login", message = "ce login a déjà été pris. Veuillez choisir un autre.")
+ * @UniqueEntity("email", message = "cet email adéjà été utilisé, veuillez choisir un autre.")
  */
 class Utilisateurs implements UserInterface
 {
@@ -44,7 +45,7 @@ class Utilisateurs implements UserInterface
     private $dateNaiss;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $adresse;
 
@@ -54,17 +55,17 @@ class Utilisateurs implements UserInterface
     private $codePostal;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $ville;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $pays;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $telephone;
 

@@ -17,20 +17,20 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
-use google\mail;
+// use google\mail;
 
 class RegistrationController extends AbstractController
 {
 
     private $emailVerifier;
-    // une méthode pour vérifier le mail de l'utilisateur
+    
     public function __construct(EmailVerifier $emailVerifier)
     {
         $this->emailVerifier = $emailVerifier;
     }
 
     /**
-     * @Route("/", name="app_register")
+     * @Route("/register", name="app_register")
      */
     public function register(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
     {
@@ -55,14 +55,14 @@ class RegistrationController extends AbstractController
                 'app_verify_email',
                 $user,
                 (new TemplatedEmail())
-                    ->from(new Address('ndao6516@gmail.com', 'Administrateur'))
+                    ->from(new Address('ndao6516@gmail.com', 'Administrateur du site retrouvaille anciens amis'))
                     ->to($user->getEmail())
-                    ->subject('Please Confirm your Email')
+                    ->subject('Veuillez confirmer votre email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
-            // do anything else you need here, like send an email
+            
 
-            return $this->redirectToRoute('index');
+            return $this->redirectToRoute('utilisateurs');
         }
 
         return $this->render('registration/register.html.twig', [
@@ -70,6 +70,7 @@ class RegistrationController extends AbstractController
         ]);
     }
 
+// vérification du mail de l'utilisateur qui vient de s'inscrire
     /**
      * @Route("/verify/email", name="app_verify_email")
      */
@@ -97,7 +98,7 @@ class RegistrationController extends AbstractController
         }
 
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
-        $this->addFlash('success', 'Your email address has been verified.');
+        $this->addFlash('success', 'Votre adresse mail a bien été vérifié. Merci!');
 
         return $this->redirectToRoute('app_register');
     }
