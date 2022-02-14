@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use DateTimeInterface;
 use App\Entity\Utilisateurs;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\MessagesRepository;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -29,6 +31,12 @@ class Messages
     private $titre;
 
     /**
+     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     * @Gedmo\Slug(fields={"titre"})
+     */
+    private $slug;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $message;
@@ -44,12 +52,7 @@ class Messages
      */
     private $utilisateur;
 
-    /**
-     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
-     * @Gedmo\Slug(fields={"titre"})
-     */
-    private $slug;
-
+    
     public function getId(): ?int
     {
         return $this->id;
