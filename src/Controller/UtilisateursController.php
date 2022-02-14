@@ -4,10 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Utilisateurs;
 use App\Repository\UtilisateursRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/utilisateurs")
@@ -27,13 +28,14 @@ class UtilisateursController extends AbstractController
         return $this->render('utilisateurs/index.html.twig', [
             'utilisateurs' => $utilisateurs,
         ]);
-        }
+    }
 
-        /**
-         * @Route("/pageperso", name="pageperso", methods={"GET})
-         */
-        public function pageperso()
-        {
-            
-        }
+    // affichage des données d'un utilisateur
+    /**
+     * @Route("/{slug}", name="pageperso", methods={"GET"})
+     */
+    public function pagePerso(Request $request, Utilisateurs $utilisateurs, EntityManagerInterface $entityManager): Response
+    {
+        
+    }
 }
