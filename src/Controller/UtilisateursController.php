@@ -34,8 +34,15 @@ class UtilisateursController extends AbstractController
     /**
      * @Route("/{slug}", name="pageperso", methods={"GET"})
      */
-    public function pagePerso(Request $request, Utilisateurs $utilisateurs, EntityManagerInterface $entityManager): Response
-    {
-        
-    }
+public function pagePerso(Request $request, EntityManagerInterface $entityManagerInterface): Response
+{
+    $utilisateurs = new Utilisateurs();
+    $utilisateurs = $this->getUser()->getUsername();
+
+    // Envoie à twig pour afficher ses informations
+    return $this->render('utilisateurs/pageperso.html.twig', [
+        'utilisateurs' => $utilisateurs,
+    ]);
+}
+
 }
