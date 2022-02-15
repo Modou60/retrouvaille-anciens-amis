@@ -9,9 +9,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use App\Repository\UtilisateursRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 /**
  * @ORM\Entity(repositoryClass=UtilisateursRepository::class)
- * @UniqueEntity("login")
+ * @UniqueEntity("login", message = "ce login a déjà été pris. Veuillez choisir un autre.")
+ * @UniqueEntity("email", message = "cet email adéjà été utilisé, veuillez choisir un autre.")
  */
 class Utilisateurs implements UserInterface
 {
@@ -43,7 +45,7 @@ class Utilisateurs implements UserInterface
     private $dateNaiss;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $adresse;
 
@@ -53,17 +55,17 @@ class Utilisateurs implements UserInterface
     private $codePostal;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $ville;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $pays;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $telephone;
 
@@ -84,7 +86,7 @@ class Utilisateurs implements UserInterface
 
     /**
      * @var string The hashed password
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=false)
      */
     private $password;
 
@@ -103,6 +105,11 @@ class Utilisateurs implements UserInterface
      * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="utilisateur", orphanRemoval=true)
      */
     private $message;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
 
     public function __construct()
     {
@@ -360,6 +367,18 @@ class Utilisateurs implements UserInterface
                 $message->setUtilisateur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
 
         return $this;
     }

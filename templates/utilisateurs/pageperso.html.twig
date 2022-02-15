@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Bienvenu(e) dans votre page personnelle! {% endblock %}
+
+{% block body %}
+<div class="contenu">
+    <h1> Vous êtes sur votre page personnelle! </h1>
+    <br/><br/>
+    <p> bonjour {{ utilisateurs.nom }} </p>
+    <br/>
+    <table border="1">
+<tbody>
+    <thead>
+        <th> Civilité </th>
+        <th> Nom </th>
+        <th> Prenom </th>
+        <th> Date de naissance </th>
+    </thead>
+</tbody>
+    </table>
+</div>
+{% endblock %}
+    
+</body>

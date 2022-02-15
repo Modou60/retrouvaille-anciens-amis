@@ -1,22 +1,35 @@
 {% extends 'base.html.twig' %}
 
+<<<<<<< HEAD
 {% block title %} La page des utilisateurs !{% endblock %}
 
 {% block body %}
 <style>
     .example-wrapper {
+=======
+{% block title %}Liste des utilisateurs!{% endblock %}
+
+{% block body %}
+<style>
+    .contenu {
+>>>>>>> modou
         margin: 1em auto;
         max-width: 800px;
         width: 95%;
         font: 18px/1.5 sans-serif;
     }
 
+<<<<<<< HEAD
     .example-wrapper code {
+=======
+    .contenu code {
+>>>>>>> modou
         background: #F5F5F5;
         padding: 2px 6px;
     }
 </style>
 
+<<<<<<< HEAD
 <div class="example-wrapper">
     <h1>Liste des utilisateurs de l'application✅</h1>
 
@@ -43,6 +56,63 @@
         {{ message.titre }}
         {% endfor %}
         {% endfor %}
+=======
+<div class="contenu">
+    <h1> Voici la liste des utilisateurs qui utilisent l'application ! </h1>
+    <br /><br />
+    <hr />
+    <br />
+
+    <table border="1">
+        <tbody>
+            <thead>
+            <tr>
+                <th> Civilité </th>
+                <th> Nom </th>
+                <th> Prénom </th>
+                <th> Date de naissance </th>
+                <th> Adresse </th>
+                <th> Code postal </th>
+                <th> Ville </th>
+                <th> Pays </th>
+                <th> Téléphone </th>
+                <th> Email </th>
+                <th> Période à laquelle on était à l'école </th>
+                <th> Login </th>
+                <th> Mot de passe </th>
+                <th> Role </th>
+            </tr>
+            </thead>
+
+            {% for utilisateur in utilisateurs %}
+            <tr>
+                <td>{{ utilisateur.civilite }} </td>
+                <td>{{ utilisateur.nom }} </td>
+                <td>{{ utilisateur.prenom }} </td>
+                <td>{{ utilisateur.dateNaiss|date("d/m/Y") }} </td>
+                <td>{{ utilisateur.adresse }} </td>
+                <td>{{ utilisateur.codePostal }} </td>
+                <td>{{ utilisateur.ville }} </td>
+                <td>{{ utilisateur.pays }} </td>
+                <td>{{ utilisateur.telephone }}</td>
+                <td>{{ utilisateur.email }}</td>
+                <td>{{ utilisateur.periode }}</td>
+                <td>{{ utilisateur.login }}</td>
+                <td>{{ utilisateur.password }}</td>
+                {# affichage du role de l'utilisateur #}
+                {% for role in utilisateur.roles %}
+                <td> {{ role }} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br /><br />
+
+    <ul>
+
+
+>>>>>>> modou
     </ul>
 </div>
 {% endblock %}

@@ -1,20 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MessagesController!{% endblock %}
+{% block title %} Liste des messages! {% endblock %}
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .contenu {
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+    }
+
+    .contenu code {
+        background: #F5F5F5;
+        padding: 2px 6px;
+    }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="contenu">
+    <h1> bienvenu(e) sur la page de la liste des messages! ✅</h1>
 
-    This friendly message is coming from:
+    <br /><br />
+    <hr />
+    <br />
+    <table>
+        <tbody>
+            <thead>
+                <tr>
+                    <th> Titre </th>
+                    <th> Message </th>
+                    <th> Date </th>
+                    <th> utilisateur </th>
+                </tr>
+            </thead>
+
+            <tr>
+                {% for message in messages %}
+                <td> {{ message.titre }} </td>
+                <td> {{ message.message }} </td>
+                <td> {{ message.createdAt|date("d/m/Y") }} </td>
+                <td> {{ message.utilisateur.nom ~ ' ' ~ message.utilisateur.prenom }} </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/modou/retrouvaille-anciens-amis/src/Controller/MessagesController.php'|file_link(0) }}">src/Controller/MessagesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/modou/retrouvaille-anciens-amis/templates/messages/index.html.twig'|file_link(0) }}">templates/messages/index.html.twig</a></code></li>
+
+
     </ul>
 </div>
 {% endblock %}

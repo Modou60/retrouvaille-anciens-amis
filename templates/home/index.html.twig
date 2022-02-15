@@ -16,14 +16,25 @@
         padding: 2px 6px;
     }
 </style>
+<br/>
+<hr/>
+<br/>
 
 <div class="example-wrapper">
     <h1>Retrouvons les anciens amis de l'institut national des jeunes aveugles du Sénégal!✅</h1>
+<br/><br/>
 
 
     <ul>
+<<<<<<< HEAD
         <li><a href{{ path('inscription')}}> S'inscrire dans l'application </a> </li>
         <li><a href{{ path('indexListe')}}> Liste des utilisateurs de l'application </a> </li>
+=======
+        <li><a href="{{ path('app_register')}}"> S'inscrire dans l'application </a> </li>
+        <li><a href="{{ path('app_login')}}"> Se connecter </a> </li>
+        <li><a href="{{ path('utilisateurs') }}"> Liste des utilisateurs </a> </li>
+        <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
+>>>>>>> modou
     </ul>
 </div>
 {% endblock %}
