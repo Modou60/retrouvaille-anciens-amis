@@ -5,20 +5,33 @@
 {% block body %}
 <div class="contenu">
     <h1> Vous êtes sur votre page personnelle! </h1>
-    <br/><br/>
+    <br /><br />
     <p> bonjour {{ utilisateurs.nom }} </p>
-    <br/>
+    <br />
     <table border="1">
-<tbody>
-    <thead>
-        <th> Civilité </th>
-        <th> Nom </th>
-        <th> Prenom </th>
-        <th> Date de naissance </th>
-    </thead>
-</tbody>
+        <tbody>
+            <thead>
+                <tr>
+                    <th> Civilité </th>
+                    <th> Nom </th>
+                    <th> Prenom </th>
+                    <th> Date de naissance </th>
+                    <th> Adresse </th>
+                    <th> Code postal </th>
+                    <th> Ville </th>
+                    <th> Pays </th>
+                    <th> Téléphone </th>
+                    <th> Email </th>
+                    <th> Période à laquelle on était à l'INEFJAS </th>
+                    <th> Login </th>
+                    <th> Mot de passe </th>
+                    <th> Rôle </th>
+                    <th> Message </th>
+                </tr>
+            </thead>
+        </tbody>
     </table>
 </div>
 {% endblock %}
-    
+
 </body>

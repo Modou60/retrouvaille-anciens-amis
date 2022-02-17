@@ -2,14 +2,17 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use App\Repository\UtilisateursRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints\EqualTo;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * @ORM\Entity(repositoryClass=UtilisateursRepository::class)
  * @UniqueEntity("login", message = "ce login a déjà été pris. Veuillez choisir un autre.")
@@ -85,10 +88,17 @@ class Utilisateurs implements UserInterface
     private $login;
 
     /**
+     * @Assert\Length(min=6 message="Votre mot de passe doit avoir au moins 6 caractères !")
      * @var string The hashed password
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
     private $password;
+
+    /**
+    * @Assert(propetyPath="password", message="Votre confirmation de mot de passe est différente du premier que vous avez tapé."))
+     * @Column(type="string", length=255, nullable=true)
+     */
+    private $confirmepassword;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true, nullable=true)
@@ -110,6 +120,7 @@ class Utilisateurs implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
+
 
     public function __construct()
     {
@@ -379,6 +390,18 @@ class Utilisateurs implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getConfirmepassword(): ?string
+    {
+        return $this->confirmepassword;
+    }
+
+    public function setConfirmepassword(?string $confirmepassword): self
+    {
+        $this->confirmepassword = $confirmepassword;
 
         return $this;
     }

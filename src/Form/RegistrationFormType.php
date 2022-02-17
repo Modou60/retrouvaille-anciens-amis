@@ -14,7 +14,8 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RadioType;
+// use Symfony\Component\Form\Extension\Core\Type\RadioType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -41,23 +42,14 @@ class RegistrationFormType extends AbstractType
                 'required' => 'true'
             ])
             ->add('password', PasswordType::class, [
-                // il ne faut pas qu'il ne place pas directement sur l'objet
-                // il sera lu et encodé dans le controller
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Entrez votre mot de passe',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Le nombre de caractèrs de votre message doit au moins {{ limit }} ',
-                        // longueur maximum autorisé par symfony pour des raison de sécurité
-                        'max' => 4096,
-                    ]),
-                ],
-                // 'label' => 'Votre mot de passe',
-                'required' => 'true'
+                'required' => true,
+                'label' => 'Entrez votre mot de passe',
+            ])
+            ->add('confirmepassword', PasswordType::class, [
+                'mapped' => false,
+                'required' => true,
+                'label' => 'Confirmez votre mot de passe',
             ])
             ->add('email', EmailType::class, [
                 'label' => 'Votre email'

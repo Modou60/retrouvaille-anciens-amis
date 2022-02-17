@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Utilisateurs;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class AuthentificationController extends AbstractController
@@ -12,20 +13,20 @@ class AuthentificationController extends AbstractController
     /**
      * @Route("/login", name="app_login")
      */
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils, Utilisateurs $utilisateurs): Response
     {
-        //   if ($this->getUser()) {
-        //       return $this->redirectToRoute('app_login');
-        //  }
-        //  else
-        // Obtenir l'erreur de connexion s'il y en a une
-        $error = $authenticationUtils->getLastAuthenticationError();
+        if ($this->getUser()) {
+            return $this->redirectToRoute('pageperso', ['slug' => $utilisateurs->getUsername()]);
+        } else
+            // Obtenir l'erreur de connexion s'il y en a une
+            $error = $authenticationUtils->getLastAuthenticationError();
         // dernier nom d'utilisateur saisi par l'utilisateur
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
-            'error' => $error]);
+            'error' => $error
+        ]);
     }
 
     /**
