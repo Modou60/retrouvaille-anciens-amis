@@ -47,7 +47,6 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Entrez votre mot de passe',
             ])
             ->add('confirmepassword', PasswordType::class, [
-                'mapped' => false,
                 'required' => true,
                 'label' => 'Confirmez votre mot de passe',
             ])

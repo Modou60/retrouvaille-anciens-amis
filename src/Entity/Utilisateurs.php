@@ -3,16 +3,21 @@
 namespace App\Entity;
 
 
+
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use App\Repository\UtilisateursRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\EqualTo;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints\IdenticalTo;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 /**
  * @ORM\Entity(repositoryClass=UtilisateursRepository::class)
  * @UniqueEntity("login", message = "ce login a déjà été pris. Veuillez choisir un autre.")
@@ -20,18 +25,19 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class Utilisateurs implements UserInterface
 {
-    /**
+
+    /** 
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
 
-/**
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $civilite;
-    
+
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -74,29 +80,31 @@ class Utilisateurs implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     private $email;
 
-/**
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $periode;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $login;
 
     /**
-     * @Assert\Length(min=6 message="Votre mot de passe doit avoir au moins 6 caractères !")
+     * @Assert\Length(min=6, minMessage="Votre mot de passe doit avoir au moins 6 caractères !")
      * @var string The hashed password
      * @ORM\Column(type="string", length=255)
      */
     private $password;
 
     /**
-    * @Assert(propetyPath="password", message="Votre confirmation de mot de passe est différente du premier que vous avez tapé."))
-     * @Column(type="string", length=255, nullable=true)
+     * @Assert\EqualTo(propertyPath="password", message="Votre confirmation de mot de passe est différente du premier que vous avez tapé .")
      */
     private $confirmepassword;
 
@@ -176,7 +184,7 @@ class Utilisateurs implements UserInterface
     /**
      * @see UserInterface
      */
-    public function getPassword(): string
+    public function getPassword(): ?string
     {
         return $this->password;
     }
@@ -399,7 +407,7 @@ class Utilisateurs implements UserInterface
         return $this->confirmepassword;
     }
 
-    public function setConfirmepassword(?string $confirmepassword): self
+    public function setConfirmepassword(string $confirmepassword): self
     {
         $this->confirmepassword = $confirmepassword;
 
