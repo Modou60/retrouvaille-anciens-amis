@@ -37,10 +37,8 @@ class RegistrationController extends AbstractController
         $user = new Utilisateurs();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
-// if ($user->getPassword() === $user->getConfirmepassword())
-
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
+            // encode the password
             $user->setPassword(
                 $userPasswordEncoder->encodePassword(
                     $user,

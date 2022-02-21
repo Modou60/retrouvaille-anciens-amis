@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-
-
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use App\Repository\UtilisateursRepository;
@@ -14,7 +12,6 @@ use Symfony\Component\Validator\Constraints\EqualTo;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Validator\Constraints\IdenticalTo;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
@@ -23,9 +20,10 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @UniqueEntity("login", message = "ce login a déjà été pris. Veuillez choisir un autre.")
  * @UniqueEntity("email", message = "cet email adéjà été utilisé, veuillez choisir un autre.")
  */
+
 class Utilisateurs implements UserInterface
 {
-
+     
     /** 
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -104,9 +102,9 @@ class Utilisateurs implements UserInterface
     private $password;
 
     /**
-     * @Assert\EqualTo(propertyPath="password", message="Votre confirmation de mot de passe est différente du premier que vous avez tapé .")
+    
      */
-    private $confirmepassword;
+    // private $confirmepassword;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true, nullable=true)
@@ -213,7 +211,7 @@ class Utilisateurs implements UserInterface
     public function eraseCredentials()
     {
         // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
+        // $this->Password = null;
     }
 
     public function getNom(): ?string
@@ -402,15 +400,15 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 
-    public function getConfirmepassword(): ?string
-    {
-        return $this->confirmepassword;
-    }
+    // public function getConfirmepassword(): ?string
+    // {
+    //     return $this->confirmepassword;
+    // }
 
-    public function setConfirmepassword(string $confirmepassword): self
-    {
-        $this->confirmepassword = $confirmepassword;
+    // public function setConfirmepassword(string $confirmepassword): self
+    // {
+    //     $this->confirmepassword = $confirmepassword;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 }

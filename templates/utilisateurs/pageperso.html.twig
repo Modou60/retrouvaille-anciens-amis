@@ -29,6 +29,56 @@
                     <th> Message </th>
                 </tr>
             </thead>
+
+            <tr>
+                <td> {{ utilisateur.civilite }} </td>
+                <td> {{ utilisateur.nom }} </td>
+                <td> {{ utilisateur.prenom }} </td>
+                <td> {{ utilisateur.dateNaiss|date("d/m/Y") }} </td>
+                {% if utilisateur.adresse == null %}
+                <td> {{ non renseignée }} </td>
+                {% else %}
+                <td> {{ utilisateur.adresse }} </td>
+                {% endif %}
+
+                {% if utilisateur.codePostal == null %}
+                <td> {{ non renseignée }} </td>
+                {% else %}
+                <td> {{ utilisateur.codePostal }} </td>
+                {% endif %}
+
+                {% if utilisateur.ville == null %}
+                <td> {{ non renseignée }} </td>
+                {% else %}
+                <td> {{ utilisateur.ville }} </td>
+                {% endif %}
+
+                {% if utilisateur.pays == null %}
+                <td> {{ non renseignée }} </td>
+                {% else %}
+                <td> {{ utilisateur.pays }} </td>
+                {% endif %}
+
+                {% if utilisateur.telephone == null %}
+                <td>  non renseignée  </td>
+                {% else %}
+                <td> {{ utilisateur.telephone }} </td>
+                {% endif %}
+                
+                <td> {{ utilisateur.email }} </td>
+
+                {% if utilisateur.periode == null %}
+                <td>  non renseignée  </td>
+                {% else %}
+                <td> {{ utilisateur.periode }} </td>
+                {% endif %}
+
+                <td> {{ utilisateur.login }} </td>
+
+                {% for role in utilisateur.roles %}
+                    {{ role }}
+                {% endfor %}
+            </tr>
         </tbody>
     </table>
 </div>
