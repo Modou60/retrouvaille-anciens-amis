@@ -18,10 +18,11 @@ class UtilisateursController extends AbstractController
     /**
      * @Route("/", name="utilisateurs")
      */
-    public function index(UtilisateursRepository $utilisateursRepo): Response
+public function index(UtilisateursRepository $utilisateursRepo): Response
     {
+        
         // recherche de tous les utilisateurs
-        $utilisateursRepo = $this->getDoctrine()->getRepository(Utilisateurs::class);
+        
         $utilisateurs = $utilisateursRepo->findAll();
 
         // affichage dans twig
@@ -32,15 +33,13 @@ class UtilisateursController extends AbstractController
 
     // affichage des données d'un utilisateur
     /**
-     * @Route("/{slug}", name="pageperso", methods={"GET"})
+     * @Route("/{login}", name="utilisateur_perso", methods={"GET"})
      */
-public function pagePerso(): Response
+public function pagePerso(Utilisateurs $utilisateurs, $login): Response
 {
-    $utilisateur = $this->getUser();
-
     // Envoie à twig pour afficher ses informations
     return $this->render('utilisateurs/pageperso.html.twig', [
-        'utilisateur' => $utilisateur,
+        'utilisateur' => $utilisateurs,
     ]);
 }
 

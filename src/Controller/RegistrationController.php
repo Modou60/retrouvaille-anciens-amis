@@ -32,30 +32,30 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
+    public function register(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager, Utilisateurs $utilisateurs): Response
     {
-        $user = new Utilisateurs();
-        $form = $this->createForm(RegistrationFormType::class, $user);
+         $utilisateurs = new Utilisateurs();
+        $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the password
-            $user->setPassword(
+            $utilisateurs->setPassword(
                 $userPasswordEncoder->encodePassword(
-                    $user,
+                    $utilisateurs,
                     $form->get('password')->getData()
                 )
             );
 
-            $entityManager->persist($user);
+            $entityManager->persist($utilisateurs);
             $entityManager->flush();
 
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation(
                 'app_verify_email',
-                $user,
+                $utilisateurs,
                 (new TemplatedEmail())
                     ->from(new Address('ndao6516@gmail.com', 'Administrateur du site retrouvaille anciens amis'))
-                    ->to($user->getEmail())
+                    ->to($utilisateurs->getEmail())
                     ->subject('Veuillez confirmer votre email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );

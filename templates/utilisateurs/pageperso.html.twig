@@ -6,10 +6,10 @@
 <div class="contenu">
     <h1> Vous êtes sur votre page personnelle! </h1>
     <br /><br />
-    <p> bonjour {{ utilisateurs.nom }} </p>
+    <p> bonjour {{ utilisateur.civilite ~ " " ~ utilisateur.nom ~ " " ~ utilisateur.prenom }} </p>
     <br />
     <table border="1">
-        <tbody>
+         <tbody>
             <thead>
                 <tr>
                     <th> Civilité </th>
@@ -36,25 +36,25 @@
                 <td> {{ utilisateur.prenom }} </td>
                 <td> {{ utilisateur.dateNaiss|date("d/m/Y") }} </td>
                 {% if utilisateur.adresse == null %}
-                <td> {{ non renseignée }} </td>
+                <td>  non renseignée  </td>
                 {% else %}
                 <td> {{ utilisateur.adresse }} </td>
                 {% endif %}
 
                 {% if utilisateur.codePostal == null %}
-                <td> {{ non renseignée }} </td>
+                <td>  non renseignée  </td>
                 {% else %}
                 <td> {{ utilisateur.codePostal }} </td>
                 {% endif %}
 
                 {% if utilisateur.ville == null %}
-                <td> {{ non renseignée }} </td>
+                <td>  non renseignée  </td>
                 {% else %}
                 <td> {{ utilisateur.ville }} </td>
                 {% endif %}
 
                 {% if utilisateur.pays == null %}
-                <td> {{ non renseignée }} </td>
+                <td>  non renseignée  </td>
                 {% else %}
                 <td> {{ utilisateur.pays }} </td>
                 {% endif %}
@@ -74,14 +74,22 @@
                 {% endif %}
 
                 <td> {{ utilisateur.login }} </td>
+                <td> ****** </td>
 
                 {% for role in utilisateur.roles %}
-                    {{ role }}
+                    <td> {{ role }} </td>
                 {% endfor %}
+
+                {% if utilisateur.message == null %}
+                <td>  Vous n'avez pas encore de message </td>
+                {% else %}
+                {% for message in utilisateur.message %}
+                    <td> {{ message.titre }} </td>
+                {% endfor %}
+                {% endif %}
+
             </tr>
         </tbody>
     </table>
 </div>
 {% endblock %}
-
-</body>
