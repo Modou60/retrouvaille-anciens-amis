@@ -2,6 +2,7 @@
 
 namespace App\Security;
 
+use App\Entity\user;
 use App\Entity\Utilisateurs;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
@@ -24,14 +25,14 @@ class EmailVerifier
         $this->entityManager = $manager;
     }
 
-    public function sendEmailConfirmation(string $verifyEmailRouteName, UserInterface $user, TemplatedEmail $email, Utilisateurs $utilisateurs): void
+    public function sendEmailConfirmation(string $verifyEmailRouteName, UserInterface $user, TemplatedEmail $email): void
     {
-        
+        $user = new Utilisateurs();
         $signatureComponents = $this->verifyEmailHelper->generateSignature(
             $verifyEmailRouteName,
-            $utilisateurs->getLogin(),
-            $utilisateurs->getEmail(),
-            ['login' => $utilisateurs->getLogin()]
+            $user->getLogin(),
+            $user->getEmail(),
+            ['login' => $user->getLogin()]
         );
 
         $context = $email->getContext();
@@ -47,13 +48,14 @@ class EmailVerifier
     /**
      * @throws VerifyEmailExceptionInterface
      */
-    public function handleEmailConfirmation(Request $request, UserInterface $user, Utilisateurs $utilisateurs): void
+    public function handleEmailConfirmation(Request $request, UserInterface $user): void
     {
-        $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), $utilisateurs->getLogin(), $utilisateurs->getEmail());
+        $user = new Utilisateurs();
+        $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), $user->getLogin(), $user->getEmail());
 
-        $utilisateurs->setIsVerified(true);
+        $user->setIsVerified(true);
 
-        $this->entityManager->persist($utilisateurs);
+        $this->entityManager->persist($user);
         $this->entityManager->flush();
     }
 }

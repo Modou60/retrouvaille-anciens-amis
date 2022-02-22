@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
-// use google\mail;
+use google\mail;
 
 class RegistrationController extends AbstractController
 {
@@ -32,30 +32,30 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager, Utilisateurs $utilisateurs): Response
+    public function register(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
     {
-         $utilisateurs = new Utilisateurs();
-        $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
+         $user = new Utilisateurs();
+        $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the password
-            $utilisateurs->setPassword(
+            $user->setPassword(
                 $userPasswordEncoder->encodePassword(
-                    $utilisateurs,
+                    $user,
                     $form->get('password')->getData()
                 )
             );
 
-            $entityManager->persist($utilisateurs);
+            $entityManager->persist($user);
             $entityManager->flush();
 
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation(
                 'app_verify_email',
-                $utilisateurs,
+                $user,
                 (new TemplatedEmail())
                     ->from(new Address('ndao6516@gmail.com', 'Administrateur du site retrouvaille anciens amis'))
-                    ->to($utilisateurs->getEmail())
+                    ->to($user->getEmail())
                     ->subject('Veuillez confirmer votre email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
@@ -89,7 +89,7 @@ class RegistrationController extends AbstractController
 
         // validate email confirmation link, sets User::isVerified=true and persists
         try {
-            $this->emailVerifier->handleEmailConfirmation($request, $user);
+            $this->emailVerifier->handleEmailConfirmation($request, $user, $id);
         } catch (VerifyEmailExceptionInterface $exception) {
             $this->addFlash('verify_email_error', $exception->getReason());
 
