@@ -2,22 +2,10 @@
 
 {% block title %} Liste des messages! {% endblock %}
 
+
 {% block body %}
-<style>
-    .contenu {
-        margin: 1em auto;
-        max-width: 800px;
-        width: 95%;
-        font: 18px/1.5 sans-serif;
-    }
 
-    .contenu code {
-        background: #F5F5F5;
-        padding: 2px 6px;
-    }
-</style>
-
-<div class="contenu">
+<div>
     <h1> bienvenu(e) sur la page de la liste des messages! ✅</h1>
 
     <br /><br />
@@ -25,6 +13,7 @@
     <br />
     <table border="1">
         <tbody>
+            {% for message in messages %}
             <thead>
                 <tr>
                     <th> Titre </th>
@@ -35,19 +24,18 @@
             </thead>
 
             <tr>
-                {% for message in messages %}
                 <td> {{ message.titre }} </td>
                 <td> {{ message.message }} </td>
                 <td> {{ message.createdAt|date("d/m/Y") }} </td>
                 <td> {{ message.utilisateur.nom ~ ' ' ~ message.utilisateur.prenom }} </td>
-                {% endfor %}
+                {% else %}
+                <td colspan="5">
+                    Vous n'avez pas d'enregistrement!
+                </td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-
-
-    </ul>
 </div>
 {% endblock %}
