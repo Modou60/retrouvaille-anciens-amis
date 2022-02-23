@@ -5,6 +5,7 @@
 
 {% block body %}
 
+{% block content %}
 <div>
     <h1> bienvenu(e) sur la page de la liste des messages! ✅</h1>
 
@@ -30,7 +31,7 @@
                 <td> {{ message.utilisateur.nom ~ ' ' ~ message.utilisateur.prenom }} </td>
                 {% else %}
                 <td colspan="5">
-                    Vous n'avez pas d'enregistrement!
+                    Vous n'avez pas de messages enregistré dans votre base de données !
                 </td>
             </tr>
             {% endfor %}
@@ -38,4 +39,10 @@
     </table>
 
 </div>
+{% endblock %}
+
+<br/><br/>
+
+{% block footer %}
+{% endblock %}
 {% endblock %}

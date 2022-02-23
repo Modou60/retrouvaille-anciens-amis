@@ -3,6 +3,10 @@
 {% block title %} Bienvenu(e) dans votre page personnelle! {% endblock %}
 
 {% block body %}
+
+<br/></>
+
+{% block content %}
 <div class="contenu">
     <h1> Vous êtes sur votre page personnelle! </h1>
     <br /><br />
@@ -32,7 +36,7 @@
 
             <tr>
                 <td> {{ utilisateur.civilite }} </td>
-                <td> {{ utilisateur.nom }} </td>
+                <td> {{ utilisateur.nom|upper }} </td>
                 <td> {{ utilisateur.prenom }} </td>
                 <td> {{ utilisateur.dateNaiss|date("d/m/Y") }} </td>
                 {% if utilisateur.adresse == null %}
@@ -92,4 +96,10 @@
         </tbody>
     </table>
 </div>
+{% endblock %}
+
+<br/><br/>
+
+{% block footer %}
+{% endblock %}
 {% endblock %}

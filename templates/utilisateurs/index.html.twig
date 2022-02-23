@@ -1,77 +1,124 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des utilisateurs!{% endblock %}
+{% block title %}Liste des utilisateurs!
+{% endblock %}
 
 {% block body %}
-<style>
-    .contenu {
-        margin: 1em auto;
-        max-width: 800px;
-        width: 95%;
-        font: 18px/1.5 sans-serif;
-    }
+	<style>
+		.contenu {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
 
-    .contenu code {
-        background: #F5F5F5;
-        padding: 2px 6px;
-    }
-</style>
+		.contenu code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+<br/><br/>
 
-<div class="contenu">
-    <h1> Voici la liste des utilisateurs qui utilisent l'application ! </h1>
-    <br /><br />
-    <hr />
-    <br />
+{% block content %}
+	<div class="contenu">
+		<h1>
+			Voici la liste des utilisateurs qui utilisent l'application !
+		</h1>
+		<br/><br/>
+		<hr/>
+		<br/>
 
-    <table border="1">
-        <tbody>
-            <thead>
-            <tr>
-                <th> Civilité </th>
-                <th> Nom </th>
-                <th> Prénom </th>
-                <th> Date de naissance </th>
-                <th> Adresse </th>
-                <th> Code postal </th>
-                <th> Ville </th>
-                <th> Pays </th>
-                <th> Téléphone </th>
-                <th> Email </th>
-                <th> Période à laquelle on était à l'école </th>
-                <th> Login </th>
-                <th> Mot de passe </th>
-                <th> Role </th>
-            </tr>
-            </thead>
+		<table border="1">
+			<tbody>
+				{% for utilisateur in utilisateurs %}
+					<thead>
+						<tr>
+							<th>
+								Civilité
+							</th>
+							<th>
+								Nom
+							</th>
+							<th>
+								Prénom
+							</th>
+							<th>
+								Date de naissance
+							</th>
+							<th>
+								Adresse
+							</th>
+							<th>
+								Code postal
+							</th>
+							<th>
+								Ville
+							</th>
+							<th>
+								Pays
+							</th>
+							<th>
+								Téléphone
+							</th>
+							<th>
+								Email
+							</th>
+							<th>
+								Période à laquelle on était à l'école
+							</th>
+							<th>
+								Login
+							</th>
+							<th>
+								Mot de passe
+							</th>
+							<th>
+								Role
+							</th>
+						</tr>
+					</thead>
 
-            {% for utilisateur in utilisateurs %}
-            <tr>
-                <td>{{ utilisateur.civilite }} </td>
-                <td>{{ utilisateur.nom }} </td>
-                <td>{{ utilisateur.prenom }} </td>
-                <td>{{ utilisateur.dateNaiss|date("d/m/Y") }} </td>
-                <td>{{ utilisateur.adresse }} </td>
-                <td>{{ utilisateur.codePostal }} </td>
-                <td>{{ utilisateur.ville }} </td>
-                <td>{{ utilisateur.pays }} </td>
-                <td>{{ utilisateur.telephone }}</td>
-                <td>{{ utilisateur.email }}</td>
-                <td>{{ utilisateur.periode }}</td>
-                <td>{{ utilisateur.login }}</td>
-                <td>{{ utilisateur.password }}</td>
-                {# affichage du role de l'utilisateur #}
-                {% for role in utilisateur.roles %}
-                <td> {{ role }} </td>
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br /><br />
+					<tr>
+						<td>{{ utilisateur.civilite }}
+						</td>
+						<td>{{ utilisateur.nom|upper }}
+						</td>
+						<td>{{ utilisateur.prenom }}
+						</td>
+						<td>{{ utilisateur.dateNaiss|date("d/m/Y") }}
+						</td>
+						<td>{{ utilisateur.adresse }}
+						</td>
+						<td>{{ utilisateur.codePostal }}
+						</td>
+						<td>{{ utilisateur.ville }}
+						</td>
+						<td>{{ utilisateur.pays }}
+						</td>
+						<td>{{ utilisateur.telephone }}</td>
+						<td>{{ utilisateur.email }}</td>
+						<td>{{ utilisateur.periode }}</td>
+						<td>{{ utilisateur.login }}</td>
+						<td>{{ utilisateur.password }}</td>
+						{# affichage du role de l'utilisateur #}
+						{% for role in utilisateur.roles %}
+							<td>
+								{{ role }}
+							</td>
+						{% endfor %}
+					{% else %}
+						<td colspan="5">
+							Vous n'avez pas d'enregistrement!
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+		{% endblock %}
 
-    <ul>
+		<br/><br/>
 
-
-    </ul>
-</div>
-{% endblock %}
+		{% block footer %}
+		{% endblock %}
+	{% endblock %}

@@ -3,6 +3,8 @@
 {% block title %} Votre enregistrement dans l'application{% endblock %}
 
 {% block body %}
+
+{% block content %}
 {% for flashError in app.flashes('verify_email_error') %}
 <div class="alert alert-danger" role="alert">{{ flashError }}</div>
 {% endfor %}
@@ -24,4 +26,10 @@
 
 <button type="submit" class="btn"> S'inscrire </button>
 {{ form_end(registrationForm) }}
+{% endblock %}
+
+<br/><br/>
+
+{% block footer %}
+{% endblock %}
 {% endblock %}
