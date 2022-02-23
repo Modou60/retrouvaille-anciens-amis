@@ -5,10 +5,13 @@ namespace App\Controller;
 use App\Entity\Utilisateurs;
 use App\Repository\UtilisateursRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use LDAP\Result;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+
+use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
 
 /**
  * @Route("/utilisateurs")
@@ -40,6 +43,16 @@ public function pagePerso(Utilisateurs $utilisateurs, $login): Response
     // Envoie à twig pour afficher ses informations
     return $this->render('utilisateurs/pageperso.html.twig', [
         'utilisateur' => $utilisateurs,
+    ]);
+}
+
+/**
+ * @Route("/accueil_perso", name="accueil_perso")
+ */
+public function accueil(Utilisateurs $utilisateurs): Response
+{
+    return $this->render('accueil_perso.html.twig', [
+        'utilisateurs' => $utilisateurs,
     ]);
 }
 

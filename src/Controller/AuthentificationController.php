@@ -15,9 +15,9 @@ class AuthentificationController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-         if ($this->getUser()) {
-             return $this->redirectToRoute('utilisateurs');
-         } else
+        //  if ($this->getUser()) {
+            //  return $this->redirectToRoute('');
+        //  } else
             // Obtenir l'erreur de connexion s'il y en a une
             $error = $authenticationUtils->getLastAuthenticationError();
         // dernier nom d'utilisateur saisi par l'utilisateur

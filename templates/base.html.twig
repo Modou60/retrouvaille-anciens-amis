@@ -19,15 +19,27 @@
                 <!-- <a href="{{ path('index') }}"> Accueil </a> -->
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     {% if app.user %}
+                    <li><a href="{{ path('utilisateur_perso', {'login': $utilisateurs.login}) }}"> Accéder à ma page perso </a></li>
+                    <li><a href="{{ path('index') }}"> accueil </a></li>
+                    <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
                     <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
                     {% else %}
+                    <li><a href="{{ path('index') }}"> accueil </a></li>
                     <li><a href="{{ path('app_register')}}"> S'inscrire dans l'application </a> </li>
                     <li><a href="{{ path('app_login')}}"> Se connecter </a></li>
+                    <li><a href="{{ path('utilisateurs') }}"> Liste des utilisateurs </a> </li>
+                    <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
                     {% endif %}
-                    {% if (app.request.attributes.get('_route.name') == 'app_register') %}
-<li><a href="{{ path('index') }}"> accueil </a></li>
-<li><a href="{{ path('utilisateurs') }}"> Liste des utilisateurs </a> </li>
-<li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
+
+                    {% if 'register' == app.request.attributes.get('_route') %}
+                    <li><a href="{{ path('index') }}"> accueil </a></li>
+                    <li><a href="{{ path('utilisateurs') }}"> Liste des utilisateurs </a> </li>
+                    <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
+                    {% endif %}
+                    {% if 'login' == app.request.attributes.get('_route') %}
+                    <li><a href="{{ path('index') }}"> accueil </a></li>
+                    <li><a href="{{ path('utilisateurs') }}"> Liste des utilisateurs </a> </li>
+                    <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
                     {% endif %}
                 </ul>
             </div>
