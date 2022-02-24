@@ -47,11 +47,11 @@ public function pagePerso(Utilisateurs $utilisateurs, $login): Response
 }
 
 /**
- * @Route("/accueil_perso", name="accueil_perso")
+ * @Route("/accueil_perso/{login}", name="accueil_perso", methods={"GET"})
  */
-public function accueil(Utilisateurs $utilisateurs): Response
+public function accueil(Utilisateurs $utilisateurs, $login): Response
 {
-    return $this->render('accueil_perso.html.twig', [
+    return $this->render('utilisateurs/accueil_perso.html.twig', [
         'utilisateurs' => $utilisateurs,
     ]);
 }

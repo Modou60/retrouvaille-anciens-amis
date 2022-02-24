@@ -19,7 +19,7 @@
                 <!-- <a href="{{ path('index') }}"> Accueil </a> -->
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     {% if app.user %}
-                    <li><a href="{{ path('utilisateur_perso', {'login': $utilisateurs.login}) }}"> Accéder à ma page perso </a></li>
+                    <li><a href="{{ path('utilisateur_perso', {'login': app.user.login}) }}"> Accéder à ma page perso </a></li>
                     <li><a href="{{ path('index') }}"> accueil </a></li>
                     <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
                     <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>

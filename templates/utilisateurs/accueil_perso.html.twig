@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
-
-{% block title %} Salut !{% endblock %}
-
+{% if app.user %}
+{% block title %} Salut {{ app.user.civilite ~ " " app.user.nom ~ " " app.user.prenom }} !{% endblock %}
+{% endif %}
 {% block body %}
 
 <br/><br/>

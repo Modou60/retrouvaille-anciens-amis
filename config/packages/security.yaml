@@ -36,3 +36,4 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/utilisateurs, roles: ROLE_USER }
+        - { path: ^/messages, roles: ROLE_USER }
