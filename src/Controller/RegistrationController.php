@@ -17,7 +17,11 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
+<<<<<<< HEAD
 // use google\mail;
+=======
+use google\mail;
+>>>>>>> modou
 
 class RegistrationController extends AbstractController
 {
@@ -34,12 +38,20 @@ class RegistrationController extends AbstractController
      */
     public function register(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
     {
+<<<<<<< HEAD
         $user = new Utilisateurs();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
+=======
+         $user = new Utilisateurs();
+        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // encode the password
+>>>>>>> modou
             $user->setPassword(
                 $userPasswordEncoder->encodePassword(
                     $user,
@@ -62,7 +74,11 @@ class RegistrationController extends AbstractController
             );
             
 
+<<<<<<< HEAD
             return $this->redirectToRoute('utilisateurs');
+=======
+            return $this->redirectToRoute('app_login');
+>>>>>>> modou
         }
 
         return $this->render('registration/register.html.twig', [
@@ -90,7 +106,11 @@ class RegistrationController extends AbstractController
 
         // validate email confirmation link, sets User::isVerified=true and persists
         try {
+<<<<<<< HEAD
             $this->emailVerifier->handleEmailConfirmation($request, $user);
+=======
+            $this->emailVerifier->handleEmailConfirmation($request, $user, $id);
+>>>>>>> modou
         } catch (VerifyEmailExceptionInterface $exception) {
             $this->addFlash('verify_email_error', $exception->getReason());
 
@@ -100,6 +120,10 @@ class RegistrationController extends AbstractController
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
         $this->addFlash('success', 'Votre adresse mail a bien été vérifié. Merci!');
 
+<<<<<<< HEAD
         return $this->redirectToRoute('app_register');
+=======
+        return $this->redirectToRoute('index');
+>>>>>>> modou
     }
 }

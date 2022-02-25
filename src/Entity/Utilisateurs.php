@@ -1,34 +1,44 @@
-<?php
-
+<?
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use App\Repository\UtilisateursRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\EqualTo;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+<<<<<<< HEAD
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+=======
+
+>>>>>>> modou
 /**
  * @ORM\Entity(repositoryClass=UtilisateursRepository::class)
  * @UniqueEntity("login", message = "ce login a déjà été pris. Veuillez choisir un autre.")
  * @UniqueEntity("email", message = "cet email adéjà été utilisé, veuillez choisir un autre.")
  */
+
 class Utilisateurs implements UserInterface
 {
-    /**
+     
+    /** 
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
 
-/**
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $civilite;
-    
+
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -71,24 +81,37 @@ class Utilisateurs implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     private $email;
 
-/**
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $periode;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $login;
 
     /**
+     * @Assert\Length(min=6, minMessage="Votre mot de passe doit avoir au moins 6 caractères !")
      * @var string The hashed password
+<<<<<<< HEAD
      * @ORM\Column(type="string", nullable=false)
+=======
+     * @ORM\Column(type="string", length=255)
+>>>>>>> modou
      */
     private $password;
+
+    /**
+    
+     */
+    // private $confirmepassword;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true, nullable=true)
@@ -111,6 +134,10 @@ class Utilisateurs implements UserInterface
      */
     private $isVerified = false;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> modou
     public function __construct()
     {
         $this->message = new ArrayCollection();
@@ -165,7 +192,7 @@ class Utilisateurs implements UserInterface
     /**
      * @see UserInterface
      */
-    public function getPassword(): string
+    public function getPassword(): ?string
     {
         return $this->password;
     }
@@ -194,7 +221,7 @@ class Utilisateurs implements UserInterface
     public function eraseCredentials()
     {
         // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
+        // $this->Password = null;
     }
 
     public function getNom(): ?string
@@ -382,4 +409,19 @@ class Utilisateurs implements UserInterface
 
         return $this;
     }
+<<<<<<< HEAD
+=======
+
+    public function getConfirmepassword(): ?string
+    {
+        return $this->confirmepassword;
+    }
+
+    public function setConfirmepassword(string $confirmepassword): self
+    {
+        $this->confirmepassword = $confirmepassword;
+
+        return $this;
+    }
+>>>>>>> modou
 }

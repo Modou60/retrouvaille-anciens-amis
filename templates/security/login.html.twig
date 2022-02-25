@@ -3,7 +3,15 @@
 {% block title %} Page d'authentification! {% endblock %}
 
 {% block body %}
+<<<<<<< HEAD
 <form method="post">
+=======
+
+<br/><br/>
+{% block content %}
+<form action="{{ path('accueil_perso', {'login': utilisateurs.login}"}} method="post">
+    <input type="hidden" name="_target_path" value="{{ path('account') }}" />
+>>>>>>> modou
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -40,3 +48,12 @@
     </button>
 </form>
 {% endblock %}
+<<<<<<< HEAD
+=======
+
+<br/><br/>
+
+{% block footer %}
+{% endblock %}
+{% endblock %}
+>>>>>>> modou

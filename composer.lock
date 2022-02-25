@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "5b6e4211b09a8bf09b906f8cc1b542b6",
+=======
+    "content-hash": "bbe47d71a906e04fd1b38d06c25410be",
+>>>>>>> modou
     "packages": [
         {
             "name": "behat/transliterator",
@@ -388,6 +392,7 @@
         {
             "name": "doctrine/dbal",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "3.3.1",
             "source": {
                 "type": "git",
@@ -398,6 +403,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/dbal/zipball/5b6eb6c8ce65ebdc60b0c0960a676cf76758dbf2",
                 "reference": "5b6eb6c8ce65ebdc60b0c0960a676cf76758dbf2",
+=======
+            "version": "3.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/dbal.git",
+                "reference": "35eae239ef515d55ebb24e9d4715cad09a4f58ed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/35eae239ef515d55ebb24e9d4715cad09a4f58ed",
+                "reference": "35eae239ef515d55ebb24e9d4715cad09a4f58ed",
+>>>>>>> modou
 =======
             "version": "3.3.2",
             "source": {
@@ -492,7 +509,11 @@
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/doctrine/dbal/tree/3.3.1"
+=======
+                "source": "https://github.com/doctrine/dbal/tree/3.3.2"
+>>>>>>> modou
 =======
                 "source": "https://github.com/doctrine/dbal/tree/3.3.2"
 >>>>>>> modou
@@ -512,7 +533,11 @@
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-01-30T17:50:59+00:00"
+=======
+            "time": "2022-02-05T16:33:45+00:00"
+>>>>>>> modou
 =======
             "time": "2022-02-05T16:33:45+00:00"
 >>>>>>> modou
@@ -1767,6 +1792,70 @@
                 "source": "https://github.com/helios-ag/FMElfinderBundle/tree/10.1"
             },
             "time": "2021-01-29T14:07:45+00:00"
+        },
+        {
+            "name": "jms/metadata",
+            "version": "2.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/metadata.git",
+                "reference": "c3a3214354b5a765a19875f7b7c5ebcd94e462e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/metadata/zipball/c3a3214354b5a765a19875f7b7c5ebcd94e462e5",
+                "reference": "c3a3214354b5a765a19875f7b7c5ebcd94e462e5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0"
+            },
+            "require-dev": {
+                "doctrine/cache": "^1.0",
+                "doctrine/coding-standard": "^8.0",
+                "mikey179/vfsstream": "^1.6.7",
+                "phpunit/phpunit": "^8.5|^9.0",
+                "psr/container": "^1.0",
+                "symfony/cache": "^3.1|^4.0|^5.0",
+                "symfony/dependency-injection": "^3.1|^4.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Metadata\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                },
+                {
+                    "name": "Asmir Mustafic",
+                    "email": "goetas@gmail.com"
+                }
+            ],
+            "description": "Class/method/property metadata management in PHP",
+            "keywords": [
+                "annotations",
+                "metadata",
+                "xml",
+                "yaml"
+            ],
+            "support": {
+                "issues": "https://github.com/schmittjoh/metadata/issues",
+                "source": "https://github.com/schmittjoh/metadata/tree/2.6.1"
+            },
+            "time": "2021-11-22T12:27:42+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -3864,6 +3953,7 @@
         },
         {
             "name": "symfony/flex",
+<<<<<<< HEAD
             "version": "v1.18.3",
             "source": {
                 "type": "git",
@@ -3874,6 +3964,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/flex/zipball/d40a6b176b70ea323af2b08507319d1c417520fd",
                 "reference": "d40a6b176b70ea323af2b08507319d1c417520fd",
+=======
+            "version": "v1.18.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/flex.git",
+                "reference": "10e438f53a972439675dc720706f0cd5c0ed94f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/10e438f53a972439675dc720706f0cd5c0ed94f1",
+                "reference": "10e438f53a972439675dc720706f0cd5c0ed94f1",
+>>>>>>> modou
                 "shasum": ""
             },
             "require": {
@@ -3909,7 +4011,11 @@
             "description": "Composer plugin for Symfony",
             "support": {
                 "issues": "https://github.com/symfony/flex/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/flex/tree/v1.18.3"
+=======
+                "source": "https://github.com/symfony/flex/tree/v1.18.5"
+>>>>>>> modou
             },
             "funding": [
                 {
@@ -3925,7 +4031,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-01-27T10:24:58+00:00"
+=======
+            "time": "2022-02-16T17:26:46+00:00"
+>>>>>>> modou
         },
         {
             "name": "symfony/form",
@@ -4154,6 +4264,7 @@
             "homepage": "https://symfony.com",
             "support": {
                 "source": "https://github.com/symfony/framework-bundle/tree/v4.4.37"
+<<<<<<< HEAD
             },
             "funding": [
                 {
@@ -4172,6 +4283,74 @@
             "time": "2022-01-12T11:20:14+00:00"
 <<<<<<< HEAD
 =======
+        },
+        {
+            "name": "symfony/google-mailer",
+            "version": "v4.4.37",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/google-mailer.git",
+                "reference": "04b82f048c9c84024f937ca3d4e11cb6269e9034"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/google-mailer/zipball/04b82f048c9c84024f937ca3d4e11cb6269e9034",
+                "reference": "04b82f048c9c84024f937ca3d4e11cb6269e9034",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/mailer": "^4.4|^5.0"
+            },
+            "type": "symfony-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Mailer\\Bridge\\Google\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Google Mailer Bridge",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/google-mailer/tree/v4.4.37"
+=======
+>>>>>>> modou
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+<<<<<<< HEAD
+            "time": "2022-01-02T09:41:36+00:00"
+>>>>>>> modou
+=======
+            "time": "2022-01-12T11:20:14+00:00"
         },
         {
             "name": "symfony/google-mailer",
@@ -5095,6 +5274,8 @@
             ],
             "support": {
                 "source": "https://github.com/symfony/options-resolver/tree/v4.4.37"
+<<<<<<< HEAD
+=======
             },
             "funding": [
                 {
@@ -5111,6 +5292,92 @@
                 }
             ],
             "time": "2022-01-02T09:41:36+00:00"
+        },
+        {
+            "name": "symfony/polyfill-intl-grapheme",
+            "version": "v1.24.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
+                "reference": "81b86b50cf841a64252b439e738e97f4a34e2783"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/81b86b50cf841a64252b439e738e97f4a34e2783",
+                "reference": "81b86b50cf841a64252b439e738e97f4a34e2783",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "suggest": {
+                "ext-intl": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.23-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Grapheme\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for intl's grapheme_* functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "grapheme",
+                "intl",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.24.0"
+>>>>>>> modou
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+<<<<<<< HEAD
+            "time": "2022-01-02T09:41:36+00:00"
+=======
+            "time": "2021-11-23T21:10:46+00:00"
+>>>>>>> modou
         },
         {
             "name": "symfony/polyfill-intl-icu",
@@ -6795,6 +7062,95 @@
                 }
             ],
             "time": "2022-01-02T09:41:36+00:00"
+<<<<<<< HEAD
+=======
+        },
+        {
+            "name": "symfony/string",
+            "version": "v5.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/string.git",
+                "reference": "92043b7d8383e48104e411bc9434b260dbeb5a10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/string/zipball/92043b7d8383e48104e411bc9434b260dbeb5a10",
+                "reference": "92043b7d8383e48104e411bc9434b260dbeb5a10",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-intl-grapheme": "~1.0",
+                "symfony/polyfill-intl-normalizer": "~1.0",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "~1.15"
+            },
+            "conflict": {
+                "symfony/translation-contracts": ">=3.0"
+            },
+            "require-dev": {
+                "symfony/error-handler": "^4.4|^5.0|^6.0",
+                "symfony/http-client": "^4.4|^5.0|^6.0",
+                "symfony/translation-contracts": "^1.1|^2",
+                "symfony/var-exporter": "^4.4|^5.0|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\String\\": ""
+                },
+                "files": [
+                    "Resources/functions.php"
+                ],
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an object-oriented API to strings and deals with bytes, UTF-8 code points and grapheme clusters in a unified way",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "grapheme",
+                "i18n",
+                "string",
+                "unicode",
+                "utf-8",
+                "utf8"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/string/tree/v5.4.3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-01-02T09:53:40+00:00"
+>>>>>>> modou
         },
         {
             "name": "symfony/translation",
@@ -7596,6 +7952,7 @@
             ],
             "time": "2022-01-24T20:11:01+00:00"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         },
         {
@@ -7610,6 +7967,21 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/SymfonyCasts/verify-email-bundle/zipball/aecd44697f7385178ff84a80f2b51d6318c15497",
                 "reference": "aecd44697f7385178ff84a80f2b51d6318c15497",
+=======
+        },
+        {
+            "name": "symfonycasts/verify-email-bundle",
+            "version": "v1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SymfonyCasts/verify-email-bundle.git",
+                "reference": "1b843f75398f2ab44b1d282945988d635b87f561"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SymfonyCasts/verify-email-bundle/zipball/1b843f75398f2ab44b1d282945988d635b87f561",
+                "reference": "1b843f75398f2ab44b1d282945988d635b87f561",
+>>>>>>> modou
                 "shasum": ""
             },
             "require": {
@@ -7643,9 +8015,15 @@
             "description": "Simple, stylish Email Verification for Symfony",
             "support": {
                 "issues": "https://github.com/SymfonyCasts/verify-email-bundle/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.8.0"
             },
             "time": "2022-01-31T15:09:22+00:00"
+>>>>>>> modou
+=======
+                "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.9.0"
+            },
+            "time": "2022-02-23T14:33:41+00:00"
 >>>>>>> modou
         },
         {
@@ -7802,6 +8180,116 @@
                 }
             ],
             "time": "2022-02-04T06:59:48+00:00"
+<<<<<<< HEAD
+=======
+        },
+        {
+            "name": "vich/uploader-bundle",
+            "version": "1.19.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dustin10/VichUploaderBundle.git",
+                "reference": "56aeadb1365de714f54f4a7c3b6757e8662f4f29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dustin10/VichUploaderBundle/zipball/56aeadb1365de714f54f4a7c3b6757e8662f4f29",
+                "reference": "56aeadb1365de714f54f4a7c3b6757e8662f4f29",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "jms/metadata": "^1.7 || ^2.4",
+                "php": "^7.3 || ^8.0",
+                "symfony/config": "^4.4 || ^5.0 || ^6.0",
+                "symfony/console": "^4.4 || ^5.0 || ^6.0",
+                "symfony/dependency-injection": "^4.4 || ^5.0 || ^6.0",
+                "symfony/event-dispatcher-contracts": "^1.1 || ^2.0 || ^3.0",
+                "symfony/http-foundation": "^4.4 || ^5.0 || ^6.0",
+                "symfony/http-kernel": "^4.4 || ^5.0 || ^6.0",
+                "symfony/mime": "^4.4 || ^5.0 || ^6.0",
+                "symfony/property-access": "^4.4 || ^5.0 || ^6.0",
+                "symfony/string": "^5.0 || ^6.0"
+            },
+            "conflict": {
+                "doctrine/annotations": "<1.12",
+                "league/flysystem": "<2.0"
+            },
+            "require-dev": {
+                "alcaeus/mongo-php-adapter": "^1.2",
+                "doctrine/doctrine-bundle": "^2.2",
+                "doctrine/mongodb-odm": "^1.2 || ^2.0",
+                "doctrine/orm": "^2.7",
+                "ext-sqlite3": "*",
+                "knplabs/knp-gaufrette-bundle": "dev-master",
+                "league/flysystem-bundle": "^2.0",
+                "league/flysystem-memory": "^2.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.1",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^9.5",
+                "symfony/asset": "^4.4 || ^5.0 || ^6.0",
+                "symfony/browser-kit": "^4.4 || ^5.0 || ^6.0",
+                "symfony/css-selector": "^4.4 || ^5.0 || ^6.0",
+                "symfony/doctrine-bridge": "^4.4 || ^5.0 || ^6.0",
+                "symfony/dom-crawler": "^4.4 || ^5.0 || ^6.0",
+                "symfony/form": "^4.4 || ^5.0 || ^6.0",
+                "symfony/framework-bundle": "^4.4 || ^5.0 || ^6.0",
+                "symfony/phpunit-bridge": "^6.0",
+                "symfony/security-csrf": "^4.4 || ^5.0 || ^6.0",
+                "symfony/translation": "^4.4 || ^5.0 || ^6.0",
+                "symfony/twig-bridge": "^4.4 || ^5.0 || ^6.0",
+                "symfony/twig-bundle": "^4.4 || ^5.0 || ^6.0",
+                "symfony/validator": "^4.4 || ^5.0 || ^6.0",
+                "symfony/var-dumper": "^4.4 || ^5.0 || ^6.0",
+                "symfony/yaml": "^4.4 || ^5.0 || ^6.0"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "For integration with Doctrine",
+                "doctrine/mongodb-odm-bundle": "For integration with Doctrine ODM",
+                "doctrine/orm": "For integration with Doctrine ORM",
+                "doctrine/phpcr-odm": "For integration with Doctrine PHPCR",
+                "knplabs/knp-gaufrette-bundle": "For integration with Gaufrette",
+                "league/flysystem-bundle": "For integration with Flysystem",
+                "liip/imagine-bundle": "To generate image thumbnails",
+                "ocramius/proxy-manager": "To use lazy services",
+                "oneup/flysystem-bundle": "For integration with Flysystem",
+                "symfony/asset": "To generate better links",
+                "symfony/form": "To handle uploads in forms",
+                "symfony/yaml": "To use YAML mapping"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vich\\UploaderBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dustin Dobervich",
+                    "email": "ddobervich@gmail.com"
+                }
+            ],
+            "description": "Ease file uploads attached to entities",
+            "homepage": "https://github.com/dustin10/VichUploaderBundle",
+            "keywords": [
+                "file uploads",
+                "upload"
+            ],
+            "support": {
+                "issues": "https://github.com/dustin10/VichUploaderBundle/issues",
+                "source": "https://github.com/dustin10/VichUploaderBundle/tree/1.19.0"
+            },
+            "time": "2021-12-23T17:28:12+00:00"
+>>>>>>> modou
         },
         {
             "name": "webmozart/assert",
@@ -8201,6 +8689,7 @@
         },
         {
             "name": "phar-io/version",
+<<<<<<< HEAD
             "version": "3.1.1",
             "source": {
                 "type": "git",
@@ -8211,6 +8700,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phar-io/version/zipball/15a90844ad40f127afd244c0cad228de2a80052a",
                 "reference": "15a90844ad40f127afd244c0cad228de2a80052a",
+=======
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phar-io/version.git",
+                "reference": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phar-io/version/zipball/4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
+                "reference": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
+>>>>>>> modou
                 "shasum": ""
             },
             "require": {
@@ -8246,9 +8747,15 @@
             "description": "Library for handling version information and constraints",
             "support": {
                 "issues": "https://github.com/phar-io/version/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/phar-io/version/tree/3.1.1"
             },
             "time": "2022-02-07T21:56:48+00:00"
+=======
+                "source": "https://github.com/phar-io/version/tree/3.2.1"
+            },
+            "time": "2022-02-21T01:04:05+00:00"
+>>>>>>> modou
         },
         {
             "name": "phpspec/prophecy",
@@ -8319,16 +8826,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.10",
+            "version": "9.2.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687"
+                "reference": "deac8540cb7bd40b2b8cfa679b76202834fd04e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d5850aaf931743067f4bfc1ae4cbd06468400687",
-                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/deac8540cb7bd40b2b8cfa679b76202834fd04e8",
+                "reference": "deac8540cb7bd40b2b8cfa679b76202834fd04e8",
                 "shasum": ""
             },
             "require": {
@@ -8384,7 +8891,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.10"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.13"
             },
             "funding": [
                 {
@@ -8392,7 +8899,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-05T09:12:13+00:00"
+            "time": "2022-02-23T17:02:38+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -8637,16 +9144,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.13",
+            "version": "9.5.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "597cb647654ede35e43b137926dfdfef0fb11743"
+                "reference": "5ff8c545a50226c569310a35f4fa89d79f1ddfdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/597cb647654ede35e43b137926dfdfef0fb11743",
-                "reference": "597cb647654ede35e43b137926dfdfef0fb11743",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5ff8c545a50226c569310a35f4fa89d79f1ddfdc",
+                "reference": "5ff8c545a50226c569310a35f4fa89d79f1ddfdc",
                 "shasum": ""
             },
             "require": {
@@ -8662,7 +9169,7 @@
                 "phar-io/version": "^3.0.2",
                 "php": ">=7.3",
                 "phpspec/prophecy": "^1.12.1",
-                "phpunit/php-code-coverage": "^9.2.7",
+                "phpunit/php-code-coverage": "^9.2.13",
                 "phpunit/php-file-iterator": "^3.0.5",
                 "phpunit/php-invoker": "^3.1.1",
                 "phpunit/php-text-template": "^2.0.3",
@@ -8724,7 +9231,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.13"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.16"
             },
             "funding": [
                 {
@@ -8736,7 +9243,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-24T07:33:35+00:00"
+            "time": "2022-02-23T17:10:58+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -9995,16 +10502,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.36.4",
+            "version": "v1.38.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "716eee9c8b10b33e682df1b7d80b9061887e9691"
+                "reference": "143024ab0e426285d3d9b7f6a3ce51e12a9d8ec5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/716eee9c8b10b33e682df1b7d80b9061887e9691",
-                "reference": "716eee9c8b10b33e682df1b7d80b9061887e9691",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/143024ab0e426285d3d9b7f6a3ce51e12a9d8ec5",
+                "reference": "143024ab0e426285d3d9b7f6a3ce51e12a9d8ec5",
                 "shasum": ""
             },
             "require": {
@@ -10063,7 +10570,7 @@
             ],
             "support": {
                 "issues": "https://github.com/symfony/maker-bundle/issues",
-                "source": "https://github.com/symfony/maker-bundle/tree/v1.36.4"
+                "source": "https://github.com/symfony/maker-bundle/tree/v1.38.0"
             },
             "funding": [
                 {
@@ -10079,7 +10586,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-01T00:27:38+00:00"
+            "time": "2022-02-24T21:06:51+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",

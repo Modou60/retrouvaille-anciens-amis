@@ -3,19 +3,26 @@
 namespace App\Controller;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Entity\Utilisateurs;
 use App\Form\InscriptionType;
 use App\Repository\UtilisateursRepository;
 =======
+=======
+>>>>>>> modou
 
 
 // use App\Entity\Utilisateurs;
 
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -23,6 +30,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Laminas\Code\Scanner\Util;
 =======
+=======
+>>>>>>> modou
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use phpDocumentor\Reflection\DocBlock\Tags\Formatter;
 use SebastianBergmann\CodeCoverage\Report\Html\Renderer;
@@ -30,6 +39,9 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityManager;
 use Doctrine\DBAL\Types\TextType;
 use Gedmo\Mapping\Annotation\Slug;
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
 
 /**
@@ -42,6 +54,7 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         
         return $this->render('home/index.html.twig', []);
@@ -87,6 +100,11 @@ class HomeController extends AbstractController
             'utilisateurs' => $utilisateurs,
             'utilisateurform1' => $form->createView(),
         ]);
+=======
+        return $this->render('home/index.html.twig', []);
+    }
+
+>>>>>>> modou
 =======
         return $this->render('home/index.html.twig', []);
     }

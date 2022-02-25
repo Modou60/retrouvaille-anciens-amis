@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+{% if app.user %}
+{% block title %} Salut {{ app.user.civilite ~ " " app.user.nom ~ " " app.user.prenom }} !{% endblock %}
+{% endif %}
+{% block body %}
+
+<br/><br/>
+{% block content %}
+<div>
+    <h1> Vous êtes dans votre page d'accueil </h1>
+
+    <br/><br/>
+    <p> Vous pouvez gérer ici toutes les informations personnelles vous concernant. La consultation de vos messages, leur suppression ou non, la consultation de vos contacts, la recherche de nouveaux!
+        Bonne visite! </p>
+</div>
+{% endblock %}
+
+<br><br>
+
+{% block footer %}
+{% endblock %}
+{% endblock %}

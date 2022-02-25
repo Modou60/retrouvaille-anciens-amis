@@ -3,6 +3,7 @@
 {% block title %} Bienvenu(e) dans votre page personnelle! {% endblock %}
 
 {% block body %}
+<<<<<<< HEAD
 <div class="contenu">
     <h1> Vous êtes sur votre page personnelle! </h1>
     <br/><br/>
@@ -22,3 +23,105 @@
 {% endblock %}
     
 </body>
+=======
+
+<br/></>
+
+{% block content %}
+<div class="contenu">
+    <h1> Vous êtes sur votre page personnelle! </h1>
+    <br /><br />
+    <p> bonjour {{ utilisateur.civilite ~ " " ~ utilisateur.nom ~ " " ~ utilisateur.prenom }} </p>
+    <br />
+    <table border="1">
+         <tbody>
+            <thead>
+                <tr>
+                    <th> Civilité </th>
+                    <th> Nom </th>
+                    <th> Prenom </th>
+                    <th> Date de naissance </th>
+                    <th> Adresse </th>
+                    <th> Code postal </th>
+                    <th> Ville </th>
+                    <th> Pays </th>
+                    <th> Téléphone </th>
+                    <th> Email </th>
+                    <th> Période à laquelle on était à l'INEFJAS </th>
+                    <th> Login </th>
+                    <th> Mot de passe </th>
+                    <th> Rôle </th>
+                    <th> Message </th>
+                </tr>
+            </thead>
+
+            <tr>
+                <td> {{ utilisateur.civilite }} </td>
+                <td> {{ utilisateur.nom|upper }} </td>
+                <td> {{ utilisateur.prenom }} </td>
+                <td> {{ utilisateur.dateNaiss|date("d/m/Y") }} </td>
+                {% if utilisateur.adresse == null %}
+                <td>  non renseignée  </td>
+                {% else %}
+                <td> {{ utilisateur.adresse }} </td>
+                {% endif %}
+
+                {% if utilisateur.codePostal == null %}
+                <td>  non renseignée  </td>
+                {% else %}
+                <td> {{ utilisateur.codePostal }} </td>
+                {% endif %}
+
+                {% if utilisateur.ville == null %}
+                <td>  non renseignée  </td>
+                {% else %}
+                <td> {{ utilisateur.ville }} </td>
+                {% endif %}
+
+                {% if utilisateur.pays == null %}
+                <td>  non renseignée  </td>
+                {% else %}
+                <td> {{ utilisateur.pays }} </td>
+                {% endif %}
+
+                {% if utilisateur.telephone == null %}
+                <td>  non renseignée  </td>
+                {% else %}
+                <td> {{ utilisateur.telephone }} </td>
+                {% endif %}
+                
+                <td> {{ utilisateur.email }} </td>
+
+                {% if utilisateur.periode == null %}
+                <td>  non renseignée  </td>
+                {% else %}
+                <td> {{ utilisateur.periode }} </td>
+                {% endif %}
+
+                <td> {{ utilisateur.login }} </td>
+                <td> ****** </td>
+
+                {% for role in utilisateur.roles %}
+                    <td> {{ role }} </td>
+                {% endfor %}
+
+                {% if utilisateur.message == null %}
+                <td>  Vous n'avez pas encore de message </td>
+                {% else %}
+                {% for message in utilisateur.message %}
+                    <td> {{ message.titre }} </td>
+                {% endfor %}
+                {% endif %}
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+<br/><br/>
+
+{% block footer %}
+{% endblock %}
+{% endblock %}
+>>>>>>> modou

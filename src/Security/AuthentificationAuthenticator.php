@@ -91,12 +91,21 @@ class AuthentificationAuthenticator extends AbstractFormLoginAuthenticator imple
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
+<<<<<<< HEAD
+=======
+        // $utilisateur = $token->getUser();
+>>>>>>> modou
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
 
+<<<<<<< HEAD
         return new RedirectResponse($this->urlGenerator->generate('index'));
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+=======
+        return new RedirectResponse($this->urlGenerator->generate('account'));
+        throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);
+>>>>>>> modou
     }
 
     protected function getLoginUrl()

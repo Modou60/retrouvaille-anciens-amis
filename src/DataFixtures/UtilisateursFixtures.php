@@ -3,8 +3,11 @@
 namespace App\DataFixtures;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 use DateTime;
+=======
+>>>>>>> modou
 =======
 >>>>>>> modou
 use App\Entity\Messages;
@@ -23,6 +26,7 @@ class UtilisateursFixtures extends Fixture
             $utilisateurs = new Utilisateurs();
             $civilite = ["Mme", "Mlle", "M."];
             shuffle($civilite);
+<<<<<<< HEAD
 <<<<<<< HEAD
 $nom = ["NDAO", "NDIAYE", "DIOP", "SALL", "FALL", "FAYE", "LO", "NDOUR", "GUIYE", "TALL", "SENE", "BA", "KA"];
 shuffle($nom);
@@ -67,6 +71,8 @@ $date = new DateTime();
             ->setUtilisateur($utilisateurs);
             $manager->persist($messages);
 =======
+=======
+>>>>>>> modou
             $nom = ["NDAO", "NDIAYE", "DIOP", "SALL", "FALL", "FAYE", "LO", "NDOUR", "GUIYE", "TALL", "SENE", "BA", "KA"];
             shuffle($nom);
             $prenom = ["Modou", "Dame", "Khady", "Fatou", "Mamadou", "Mouhammad", "Diarra", "Sokhna", "Samba", "Bathi", "Oumar", "Serigne", "Mamour", "Saliou", "Awa", "Cheikh", "Daba"];

@@ -3,6 +3,11 @@
 {% block title %} Votre enregistrement dans l'application{% endblock %}
 
 {% block body %}
+<<<<<<< HEAD
+=======
+
+{% block content %}
+>>>>>>> modou
 {% for flashError in app.flashes('verify_email_error') %}
 <div class="alert alert-danger" role="alert">{{ flashError }}</div>
 {% endfor %}
@@ -18,9 +23,22 @@
 {{ form_row(registrationForm.prenom) }}
 {{ form_row(registrationForm.login) }}
 {{ form_row(registrationForm.password) }}
+<<<<<<< HEAD
+=======
+{# {{ form_row(registrationForm.confirmepassword) }} #}
+>>>>>>> modou
 {{ form_row(registrationForm.email) }}
 {{ form_row(registrationForm.agreeTerms) }}
 
 <button type="submit" class="btn"> S'inscrire </button>
 {{ form_end(registrationForm) }}
+<<<<<<< HEAD
+=======
+{% endblock %}
+
+<br/><br/>
+
+{% block footer %}
+{% endblock %}
+>>>>>>> modou
 {% endblock %}
