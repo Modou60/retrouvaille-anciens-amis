@@ -4,6 +4,11 @@ namespace App\Security;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+use App\Entity\user;
+use App\Entity\Utilisateurs;
+>>>>>>> modou
 =======
 use App\Entity\user;
 use App\Entity\Utilisateurs;
@@ -19,8 +24,13 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 use SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface;
+=======
+use SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface;
+use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
+>>>>>>> modou
 =======
 use SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
@@ -47,12 +57,15 @@ class EmailVerifier
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $signatureComponents = $this->verifyEmailHelper->generateSignature(
             $verifyEmailRouteName,
             $user->getId(),
             $user->getEmail(),
             ['id' => $user->getId()]
 =======
+=======
+>>>>>>> modou
 =======
 >>>>>>> modou
         $user = new Utilisateurs();
@@ -62,6 +75,9 @@ class EmailVerifier
             $user->getEmail(),
             ['login' => $user->getLogin()]
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
 =======
 >>>>>>> modou
@@ -84,7 +100,12 @@ class EmailVerifier
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), $user->getId(), $user->getEmail());
+=======
+        $user = new Utilisateurs();
+        $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), $user->getLogin(), $user->getEmail());
+>>>>>>> modou
 =======
         $user = new Utilisateurs();
         $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), $user->getLogin(), $user->getEmail());

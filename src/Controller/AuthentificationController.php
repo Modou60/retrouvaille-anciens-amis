@@ -4,10 +4,13 @@ namespace App\Controller;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 =======
+=======
+>>>>>>> modou
 =======
 >>>>>>> modou
 use App\Entity\Utilisateurs;
@@ -15,6 +18,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
 =======
 >>>>>>> modou
@@ -29,6 +35,7 @@ class AuthentificationController extends AbstractController
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         //   if ($this->getUser()) {
         //       return $this->redirectToRoute('app_login');
         //  }
@@ -38,12 +45,17 @@ class AuthentificationController extends AbstractController
 =======
 =======
 >>>>>>> modou
+=======
+>>>>>>> modou
         //  if ($this->getUser()) {
             //  return $this->redirectToRoute('');
         //  } else
             // Obtenir l'erreur de connexion s'il y en a une
             $error = $authenticationUtils->getLastAuthenticationError();
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
 =======
 >>>>>>> modou
@@ -54,7 +66,12 @@ class AuthentificationController extends AbstractController
             'last_username' => $lastUsername,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'error' => $error]);
+=======
+            'error' => $error
+        ]);
+>>>>>>> modou
 =======
             'error' => $error
         ]);

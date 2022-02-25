@@ -19,7 +19,11 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // use google\mail;
+=======
+use google\mail;
+>>>>>>> modou
 =======
 use google\mail;
 >>>>>>> modou
@@ -44,6 +48,7 @@ class RegistrationController extends AbstractController
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $user = new Utilisateurs();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -53,12 +58,17 @@ class RegistrationController extends AbstractController
 =======
 =======
 >>>>>>> modou
+=======
+>>>>>>> modou
          $user = new Utilisateurs();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the password
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
 =======
 >>>>>>> modou
@@ -86,7 +96,11 @@ class RegistrationController extends AbstractController
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             return $this->redirectToRoute('utilisateurs');
+=======
+            return $this->redirectToRoute('app_login');
+>>>>>>> modou
 =======
             return $this->redirectToRoute('app_login');
 >>>>>>> modou
@@ -122,7 +136,11 @@ class RegistrationController extends AbstractController
         try {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $this->emailVerifier->handleEmailConfirmation($request, $user);
+=======
+            $this->emailVerifier->handleEmailConfirmation($request, $user, $id);
+>>>>>>> modou
 =======
             $this->emailVerifier->handleEmailConfirmation($request, $user, $id);
 >>>>>>> modou
@@ -140,7 +158,11 @@ class RegistrationController extends AbstractController
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         return $this->redirectToRoute('app_register');
+=======
+        return $this->redirectToRoute('index');
+>>>>>>> modou
 =======
         return $this->redirectToRoute('index');
 >>>>>>> modou

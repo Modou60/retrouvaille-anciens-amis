@@ -15,7 +15,11 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+=======
+
+>>>>>>> modou
 =======
 
 >>>>>>> modou
@@ -106,7 +110,11 @@ class Utilisateurs implements UserInterface
      * @var string The hashed password
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @ORM\Column(type="string", nullable=false)
+=======
+     * @ORM\Column(type="string", length=255)
+>>>>>>> modou
 =======
      * @ORM\Column(type="string", length=255)
 >>>>>>> modou
@@ -144,6 +152,10 @@ class Utilisateurs implements UserInterface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> modou
 =======
 
 >>>>>>> modou
@@ -423,7 +435,10 @@ class Utilisateurs implements UserInterface
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> modou
 =======
 >>>>>>> modou
 
@@ -439,6 +454,9 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
 =======
 >>>>>>> modou

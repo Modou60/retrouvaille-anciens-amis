@@ -93,6 +93,10 @@ class AuthentificationAuthenticator extends AbstractFormLoginAuthenticator imple
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        // $utilisateur = $token->getUser();
+>>>>>>> modou
 =======
         // $utilisateur = $token->getUser();
 >>>>>>> modou
@@ -105,8 +109,13 @@ class AuthentificationAuthenticator extends AbstractFormLoginAuthenticator imple
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         return new RedirectResponse($this->urlGenerator->generate('index'));
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+=======
+        return new RedirectResponse($this->urlGenerator->generate('account'));
+        throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);
+>>>>>>> modou
 =======
         return new RedirectResponse($this->urlGenerator->generate('account'));
         throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);

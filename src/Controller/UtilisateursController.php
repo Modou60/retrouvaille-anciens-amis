@@ -7,6 +7,10 @@ use App\Repository\UtilisateursRepository;
 use Doctrine\ORM\EntityManagerInterface;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+use LDAP\Result;
+>>>>>>> modou
 =======
 use LDAP\Result;
 >>>>>>> modou
@@ -19,11 +23,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
 >>>>>>> modou
 
+=======
+
+use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
+
+>>>>>>> modou
 =======
 
 use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
@@ -39,11 +49,14 @@ class UtilisateursController extends AbstractController
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function index(UtilisateursRepository $utilisateursRepo): Response
     {
         // recherche de tous les utilisateurs
         $utilisateursRepo = $this->getDoctrine()->getRepository(Utilisateurs::class);
 =======
+=======
+>>>>>>> modou
 =======
 >>>>>>> modou
 public function index(UtilisateursRepository $utilisateursRepo): Response
@@ -52,6 +65,9 @@ public function index(UtilisateursRepository $utilisateursRepo): Response
         // recherche de tous les utilisateurs
         
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
 =======
 >>>>>>> modou
@@ -67,6 +83,7 @@ public function index(UtilisateursRepository $utilisateursRepo): Response
     /**
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @Route("/{slug}", name="pageperso", methods={"GET"})
      */
 public function pagePerso(Request $request, EntityManagerInterface $entityManagerInterface): Response
@@ -79,6 +96,8 @@ public function pagePerso(Request $request, EntityManagerInterface $entityManage
 =======
 =======
 >>>>>>> modou
+=======
+>>>>>>> modou
      * @Route("/{login}", name="utilisateur_perso", methods={"GET"})
      */
 public function pagePerso(Utilisateurs $utilisateurs, $login): Response
@@ -88,6 +107,9 @@ public function pagePerso(Utilisateurs $utilisateurs, $login): Response
         'utilisateur' => $utilisateurs,
     ]);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> modou
 }
 
 /**
@@ -96,11 +118,15 @@ public function pagePerso(Utilisateurs $utilisateurs, $login): Response
 public function accueil(Utilisateurs $utilisateurs, $login): Response
 {
     return $this->render('utilisateurs/accueil_perso.html.twig', [
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
         'utilisateurs' => $utilisateurs,
     ]);
 }
 
+<<<<<<< HEAD
 =======
 }
 
@@ -114,5 +140,7 @@ public function accueil(Utilisateurs $utilisateurs, $login): Response
     ]);
 }
 
+>>>>>>> modou
+=======
 >>>>>>> modou
 }
