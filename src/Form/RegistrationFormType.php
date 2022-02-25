@@ -15,7 +15,12 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
+=======
+// use Symfony\Component\Form\Extension\Core\Type\RadioType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+>>>>>>> modou
 =======
 // use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -47,6 +52,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('password', PasswordType::class, [
 <<<<<<< HEAD
+<<<<<<< HEAD
                 // il ne faut pas qu'il ne place pas directement sur l'objet
                 // il sera lu et encodé dans le controller
                 'mapped' => false,
@@ -66,6 +72,8 @@ class RegistrationFormType extends AbstractType
                 'required' => 'true'
             ])
 =======
+=======
+>>>>>>> modou
                  'mapped' => false,
                 'required' => true,
                 'label' => 'Entrez votre mot de passe',
@@ -75,6 +83,9 @@ class RegistrationFormType extends AbstractType
             //     'required' => true,
             //     'label' => 'Confirmez votre mot de passe',
             // ])
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
             ->add('email', EmailType::class, [
                 'label' => 'Votre email'

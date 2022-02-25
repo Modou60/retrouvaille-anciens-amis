@@ -4,13 +4,19 @@
 
 {% block body %}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <form method="post">
 =======
+=======
+>>>>>>> modou
 
 <br/><br/>
 {% block content %}
 <form action="{{ path('accueil_perso', {'login': utilisateurs.login}"}} method="post">
     <input type="hidden" name="_target_path" value="{{ path('account') }}" />
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -49,11 +55,17 @@
 </form>
 {% endblock %}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> modou
 
 <br/><br/>
 
 {% block footer %}
 {% endblock %}
 {% endblock %}
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou

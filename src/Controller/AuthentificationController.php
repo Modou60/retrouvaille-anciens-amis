@@ -3,14 +3,20 @@
 namespace App\Controller;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 =======
+=======
+>>>>>>> modou
 use App\Entity\Utilisateurs;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -22,6 +28,7 @@ class AuthentificationController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         //   if ($this->getUser()) {
         //       return $this->redirectToRoute('app_login');
         //  }
@@ -29,11 +36,16 @@ class AuthentificationController extends AbstractController
         // Obtenir l'erreur de connexion s'il y en a une
         $error = $authenticationUtils->getLastAuthenticationError();
 =======
+=======
+>>>>>>> modou
         //  if ($this->getUser()) {
             //  return $this->redirectToRoute('');
         //  } else
             // Obtenir l'erreur de connexion s'il y en a une
             $error = $authenticationUtils->getLastAuthenticationError();
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
         // dernier nom d'utilisateur saisi par l'utilisateur
         $lastUsername = $authenticationUtils->getLastUsername();
@@ -41,7 +53,12 @@ class AuthentificationController extends AbstractController
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'error' => $error]);
+=======
+            'error' => $error
+        ]);
+>>>>>>> modou
 =======
             'error' => $error
         ]);

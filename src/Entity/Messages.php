@@ -49,6 +49,12 @@ class Messages
     private $slug;
 
     /**
+     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     * @Gedmo\Slug(fields={"titre"})
+     */
+    private $slug;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $message;
@@ -66,6 +72,10 @@ class Messages
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    
+>>>>>>> modou
 =======
     
 >>>>>>> modou

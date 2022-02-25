@@ -18,7 +18,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 <<<<<<< HEAD
+<<<<<<< HEAD
 // use google\mail;
+=======
+use google\mail;
+>>>>>>> modou
 =======
 use google\mail;
 >>>>>>> modou
@@ -39,6 +43,7 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $user = new Utilisateurs();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -46,11 +51,16 @@ class RegistrationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
 =======
+=======
+>>>>>>> modou
          $user = new Utilisateurs();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the password
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
             $user->setPassword(
                 $userPasswordEncoder->encodePassword(
@@ -75,7 +85,11 @@ class RegistrationController extends AbstractController
             
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             return $this->redirectToRoute('utilisateurs');
+=======
+            return $this->redirectToRoute('app_login');
+>>>>>>> modou
 =======
             return $this->redirectToRoute('app_login');
 >>>>>>> modou
@@ -107,7 +121,11 @@ class RegistrationController extends AbstractController
         // validate email confirmation link, sets User::isVerified=true and persists
         try {
 <<<<<<< HEAD
+<<<<<<< HEAD
             $this->emailVerifier->handleEmailConfirmation($request, $user);
+=======
+            $this->emailVerifier->handleEmailConfirmation($request, $user, $id);
+>>>>>>> modou
 =======
             $this->emailVerifier->handleEmailConfirmation($request, $user, $id);
 >>>>>>> modou
@@ -121,7 +139,11 @@ class RegistrationController extends AbstractController
         $this->addFlash('success', 'Votre adresse mail a bien été vérifié. Merci!');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         return $this->redirectToRoute('app_register');
+=======
+        return $this->redirectToRoute('index');
+>>>>>>> modou
 =======
         return $this->redirectToRoute('index');
 >>>>>>> modou

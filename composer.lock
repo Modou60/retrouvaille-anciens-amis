@@ -5,7 +5,11 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "content-hash": "5b6e4211b09a8bf09b906f8cc1b542b6",
+=======
+    "content-hash": "bbe47d71a906e04fd1b38d06c25410be",
+>>>>>>> modou
 =======
     "content-hash": "bbe47d71a906e04fd1b38d06c25410be",
 >>>>>>> modou
@@ -393,6 +397,7 @@
             "name": "doctrine/dbal",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "3.3.1",
             "source": {
                 "type": "git",
@@ -403,6 +408,21 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/dbal/zipball/5b6eb6c8ce65ebdc60b0c0960a676cf76758dbf2",
                 "reference": "5b6eb6c8ce65ebdc60b0c0960a676cf76758dbf2",
+=======
+=======
+>>>>>>> modou
+            "version": "3.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/dbal.git",
+                "reference": "35eae239ef515d55ebb24e9d4715cad09a4f58ed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/35eae239ef515d55ebb24e9d4715cad09a4f58ed",
+                "reference": "35eae239ef515d55ebb24e9d4715cad09a4f58ed",
+<<<<<<< HEAD
+>>>>>>> modou
 =======
             "version": "3.3.2",
             "source": {
@@ -416,16 +436,6 @@
                 "reference": "35eae239ef515d55ebb24e9d4715cad09a4f58ed",
 >>>>>>> modou
 =======
-            "version": "3.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/dbal.git",
-                "reference": "35eae239ef515d55ebb24e9d4715cad09a4f58ed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/35eae239ef515d55ebb24e9d4715cad09a4f58ed",
-                "reference": "35eae239ef515d55ebb24e9d4715cad09a4f58ed",
 >>>>>>> modou
                 "shasum": ""
             },
@@ -510,7 +520,11 @@
                 "issues": "https://github.com/doctrine/dbal/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/doctrine/dbal/tree/3.3.1"
+=======
+                "source": "https://github.com/doctrine/dbal/tree/3.3.2"
+>>>>>>> modou
 =======
                 "source": "https://github.com/doctrine/dbal/tree/3.3.2"
 >>>>>>> modou
@@ -534,7 +548,11 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-01-30T17:50:59+00:00"
+=======
+            "time": "2022-02-05T16:33:45+00:00"
+>>>>>>> modou
 =======
             "time": "2022-02-05T16:33:45+00:00"
 >>>>>>> modou
@@ -3954,6 +3972,7 @@
         {
             "name": "symfony/flex",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v1.18.3",
             "source": {
                 "type": "git",
@@ -3965,6 +3984,8 @@
                 "url": "https://api.github.com/repos/symfony/flex/zipball/d40a6b176b70ea323af2b08507319d1c417520fd",
                 "reference": "d40a6b176b70ea323af2b08507319d1c417520fd",
 =======
+=======
+>>>>>>> modou
             "version": "v1.18.5",
             "source": {
                 "type": "git",
@@ -3975,6 +3996,9 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/flex/zipball/10e438f53a972439675dc720706f0cd5c0ed94f1",
                 "reference": "10e438f53a972439675dc720706f0cd5c0ed94f1",
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
                 "shasum": ""
             },
@@ -4012,7 +4036,11 @@
             "support": {
                 "issues": "https://github.com/symfony/flex/issues",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/flex/tree/v1.18.3"
+=======
+                "source": "https://github.com/symfony/flex/tree/v1.18.5"
+>>>>>>> modou
 =======
                 "source": "https://github.com/symfony/flex/tree/v1.18.5"
 >>>>>>> modou
@@ -4032,7 +4060,11 @@
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-01-27T10:24:58+00:00"
+=======
+            "time": "2022-02-16T17:26:46+00:00"
+>>>>>>> modou
 =======
             "time": "2022-02-16T17:26:46+00:00"
 >>>>>>> modou
@@ -4265,6 +4297,9 @@
             "support": {
                 "source": "https://github.com/symfony/framework-bundle/tree/v4.4.37"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> modou
             },
             "funding": [
                 {
@@ -4282,7 +4317,10 @@
             ],
             "time": "2022-01-12T11:20:14+00:00"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> modou
         },
         {
             "name": "symfony/google-mailer",
@@ -4329,6 +4367,9 @@
             "homepage": "https://symfony.com",
             "support": {
                 "source": "https://github.com/symfony/google-mailer/tree/v4.4.37"
+<<<<<<< HEAD
+=======
+>>>>>>> modou
 =======
 >>>>>>> modou
             },
@@ -4346,6 +4387,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-01-02T09:41:36+00:00"
 >>>>>>> modou
@@ -4412,6 +4454,9 @@
                     "type": "tidelift"
                 }
             ],
+            "time": "2022-01-02T09:41:36+00:00"
+>>>>>>> modou
+=======
             "time": "2022-01-02T09:41:36+00:00"
 >>>>>>> modou
         },
@@ -5275,6 +5320,8 @@
             "support": {
                 "source": "https://github.com/symfony/options-resolver/tree/v4.4.37"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
             },
             "funding": [
@@ -5375,6 +5422,92 @@
             ],
 <<<<<<< HEAD
             "time": "2022-01-02T09:41:36+00:00"
+        },
+        {
+            "name": "symfony/polyfill-intl-grapheme",
+            "version": "v1.24.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
+                "reference": "81b86b50cf841a64252b439e738e97f4a34e2783"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/81b86b50cf841a64252b439e738e97f4a34e2783",
+                "reference": "81b86b50cf841a64252b439e738e97f4a34e2783",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "suggest": {
+                "ext-intl": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.23-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Grapheme\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for intl's grapheme_* functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "grapheme",
+                "intl",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.24.0"
+>>>>>>> modou
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+<<<<<<< HEAD
+            "time": "2022-01-02T09:41:36+00:00"
+=======
+            "time": "2021-11-23T21:10:46+00:00"
+>>>>>>> modou
 =======
             "time": "2021-11-23T21:10:46+00:00"
 >>>>>>> modou
@@ -7046,6 +7179,7 @@
             "homepage": "https://symfony.com",
             "support": {
                 "source": "https://github.com/symfony/stopwatch/tree/v4.4.37"
+<<<<<<< HEAD
             },
             "funding": [
                 {
@@ -7064,6 +7198,98 @@
             "time": "2022-01-02T09:41:36+00:00"
 <<<<<<< HEAD
 =======
+        },
+        {
+            "name": "symfony/string",
+            "version": "v5.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/string.git",
+                "reference": "92043b7d8383e48104e411bc9434b260dbeb5a10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/string/zipball/92043b7d8383e48104e411bc9434b260dbeb5a10",
+                "reference": "92043b7d8383e48104e411bc9434b260dbeb5a10",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-intl-grapheme": "~1.0",
+                "symfony/polyfill-intl-normalizer": "~1.0",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "~1.15"
+            },
+            "conflict": {
+                "symfony/translation-contracts": ">=3.0"
+            },
+            "require-dev": {
+                "symfony/error-handler": "^4.4|^5.0|^6.0",
+                "symfony/http-client": "^4.4|^5.0|^6.0",
+                "symfony/translation-contracts": "^1.1|^2",
+                "symfony/var-exporter": "^4.4|^5.0|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\String\\": ""
+                },
+                "files": [
+                    "Resources/functions.php"
+                ],
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an object-oriented API to strings and deals with bytes, UTF-8 code points and grapheme clusters in a unified way",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "grapheme",
+                "i18n",
+                "string",
+                "unicode",
+                "utf-8",
+                "utf8"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/string/tree/v5.4.3"
+=======
+>>>>>>> modou
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+<<<<<<< HEAD
+            "time": "2022-01-02T09:53:40+00:00"
+>>>>>>> modou
+=======
+            "time": "2022-01-02T09:41:36+00:00"
         },
         {
             "name": "symfony/string",
@@ -7953,6 +8179,7 @@
             "time": "2022-01-24T20:11:01+00:00"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         },
         {
@@ -7968,6 +8195,8 @@
                 "url": "https://api.github.com/repos/SymfonyCasts/verify-email-bundle/zipball/aecd44697f7385178ff84a80f2b51d6318c15497",
                 "reference": "aecd44697f7385178ff84a80f2b51d6318c15497",
 =======
+=======
+>>>>>>> modou
         },
         {
             "name": "symfonycasts/verify-email-bundle",
@@ -7981,6 +8210,9 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/SymfonyCasts/verify-email-bundle/zipball/1b843f75398f2ab44b1d282945988d635b87f561",
                 "reference": "1b843f75398f2ab44b1d282945988d635b87f561",
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
                 "shasum": ""
             },
@@ -8016,9 +8248,15 @@
             "support": {
                 "issues": "https://github.com/SymfonyCasts/verify-email-bundle/issues",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.8.0"
             },
             "time": "2022-01-31T15:09:22+00:00"
+>>>>>>> modou
+=======
+                "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.9.0"
+            },
+            "time": "2022-02-23T14:33:41+00:00"
 >>>>>>> modou
 =======
                 "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.9.0"
@@ -8181,7 +8419,10 @@
             ],
             "time": "2022-02-04T06:59:48+00:00"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> modou
         },
         {
             "name": "vich/uploader-bundle",
@@ -8289,6 +8530,9 @@
                 "source": "https://github.com/dustin10/VichUploaderBundle/tree/1.19.0"
             },
             "time": "2021-12-23T17:28:12+00:00"
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
         },
         {
@@ -8690,6 +8934,7 @@
         {
             "name": "phar-io/version",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "3.1.1",
             "source": {
                 "type": "git",
@@ -8701,6 +8946,8 @@
                 "url": "https://api.github.com/repos/phar-io/version/zipball/15a90844ad40f127afd244c0cad228de2a80052a",
                 "reference": "15a90844ad40f127afd244c0cad228de2a80052a",
 =======
+=======
+>>>>>>> modou
             "version": "3.2.1",
             "source": {
                 "type": "git",
@@ -8711,6 +8958,9 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phar-io/version/zipball/4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
                 "reference": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
                 "shasum": ""
             },
@@ -8748,9 +8998,15 @@
             "support": {
                 "issues": "https://github.com/phar-io/version/issues",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/phar-io/version/tree/3.1.1"
             },
             "time": "2022-02-07T21:56:48+00:00"
+=======
+                "source": "https://github.com/phar-io/version/tree/3.2.1"
+            },
+            "time": "2022-02-21T01:04:05+00:00"
+>>>>>>> modou
 =======
                 "source": "https://github.com/phar-io/version/tree/3.2.1"
             },

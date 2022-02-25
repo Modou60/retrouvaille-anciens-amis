@@ -3,6 +3,11 @@
 namespace App\Security;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+use App\Entity\user;
+use App\Entity\Utilisateurs;
+>>>>>>> modou
 =======
 use App\Entity\user;
 use App\Entity\Utilisateurs;
@@ -13,8 +18,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 use SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface;
+=======
+use SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface;
+use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
+>>>>>>> modou
 =======
 use SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
@@ -36,18 +46,24 @@ class EmailVerifier
     public function sendEmailConfirmation(string $verifyEmailRouteName, UserInterface $user, TemplatedEmail $email): void
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $signatureComponents = $this->verifyEmailHelper->generateSignature(
             $verifyEmailRouteName,
             $user->getId(),
             $user->getEmail(),
             ['id' => $user->getId()]
 =======
+=======
+>>>>>>> modou
         $user = new Utilisateurs();
         $signatureComponents = $this->verifyEmailHelper->generateSignature(
             $verifyEmailRouteName,
             $user->getLogin(),
             $user->getEmail(),
             ['login' => $user->getLogin()]
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
         );
 
@@ -67,7 +83,12 @@ class EmailVerifier
     public function handleEmailConfirmation(Request $request, UserInterface $user): void
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), $user->getId(), $user->getEmail());
+=======
+        $user = new Utilisateurs();
+        $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), $user->getLogin(), $user->getEmail());
+>>>>>>> modou
 =======
         $user = new Utilisateurs();
         $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), $user->getLogin(), $user->getEmail());

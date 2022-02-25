@@ -2,6 +2,7 @@
 
 {% block title %} Liste des messages! {% endblock %}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {% block body %}
 <style>
@@ -27,14 +28,28 @@
 {% block content %}
 <div>
 >>>>>>> modou
+=======
+
+
+{% block body %}
+
+{% block content %}
+<div>
+>>>>>>> modou
     <h1> bienvenu(e) sur la page de la liste des messages! ✅</h1>
 
     <br /><br />
     <hr />
     <br />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <table>
         <tbody>
+=======
+    <table border="1">
+        <tbody>
+            {% for message in messages %}
+>>>>>>> modou
 =======
     <table border="1">
         <tbody>
@@ -51,13 +66,17 @@
 
             <tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 {% for message in messages %}
+=======
+>>>>>>> modou
 =======
 >>>>>>> modou
                 <td> {{ message.titre }} </td>
                 <td> {{ message.message }} </td>
                 <td> {{ message.createdAt|date("d/m/Y") }} </td>
                 <td> {{ message.utilisateur.nom ~ ' ' ~ message.utilisateur.prenom }} </td>
+<<<<<<< HEAD
 <<<<<<< HEAD
                 {% endfor %}
             </tr>
@@ -68,6 +87,17 @@
 
 
     </ul>
+=======
+                {% else %}
+                <td colspan="5">
+                    Vous n'avez pas de messages enregistré dans votre base de données !
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+>>>>>>> modou
 </div>
 =======
                 {% else %}
@@ -81,6 +111,14 @@
 
 </div>
 {% endblock %}
+
+<br/><br/>
+
+{% block footer %}
+{% endblock %}
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 
 <br/><br/>
 

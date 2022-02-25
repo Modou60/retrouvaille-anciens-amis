@@ -14,7 +14,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+=======
+
+>>>>>>> modou
 =======
 
 >>>>>>> modou
@@ -101,7 +105,11 @@ class Utilisateurs implements UserInterface
      * @Assert\Length(min=6, minMessage="Votre mot de passe doit avoir au moins 6 caractères !")
      * @var string The hashed password
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @ORM\Column(type="string", nullable=false)
+=======
+     * @ORM\Column(type="string", length=255)
+>>>>>>> modou
 =======
      * @ORM\Column(type="string", length=255)
 >>>>>>> modou
@@ -135,6 +143,10 @@ class Utilisateurs implements UserInterface
     private $isVerified = false;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> modou
 =======
 
 >>>>>>> modou
@@ -410,7 +422,10 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> modou
 
     public function getConfirmepassword(): ?string
     {
@@ -423,5 +438,8 @@ class Utilisateurs implements UserInterface
 
         return $this;
     }
+<<<<<<< HEAD
+>>>>>>> modou
+=======
 >>>>>>> modou
 }
