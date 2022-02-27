@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -104,7 +103,7 @@ class Utilisateurs implements UserInterface
     /**
     
      */
-    // private $confirmepassword;
+    private $confirmepassword;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true, nullable=true)
@@ -400,15 +399,15 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 
-    // public function getConfirmepassword(): ?string
-    // {
-    //     return $this->confirmepassword;
-    // }
+     public function getConfirmepassword(): ?string
+     {
+         return $this->confirmepassword;
+     }
 
-    // public function setConfirmepassword(string $confirmepassword): self
-    // {
-    //     $this->confirmepassword = $confirmepassword;
+     public function setConfirmepassword(string $confirmepassword): self
+     {
+         $this->confirmepassword = $confirmepassword;
 
-    //     return $this;
-    // }
+         return $this;
+     }
 }
