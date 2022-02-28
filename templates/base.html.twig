@@ -1,71 +1,110 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>{% block title %}Symfony{% endblock %}</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<title>
+			{% block title %}Symfony
+			{% endblock %}
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% block stylesheets %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/app.css') }}">
-    {% endblock %}
-</head>
+		{% block stylesheets %}
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+			<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/app.css') }}">
+		{% endblock %}
+	</head>
 
-<body>
-    <nav>
-        <div class="nav-wrapper">
-            <div class="container">
-                
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    {% if app.user %}
-                    <li><a href="{{ path('accueil_perso', {'slug': 'utilisateurs.slug'}) }}"> Aller à ma page perso </a></li>
-                    <li><a href="{{ path('utilisateur_perso', {'slug': 'utilisateur.slug'}) }}">Consulter mes données personnelles></li>
-                    <li><a href="{{ path('index') }}"> accueil </a></li>
-                    <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
-                    <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
-                    {% else %}
-                    <li><a href="{{ path('index') }}"> accueil </a></li>
-                    <li><a href="{{ path('app_register')}}"> S'inscrire dans l'application </a> </li>
-                    <li><a href="{{ path('app_login')}}"> Se connecter </a></li>
-                    <li><a href="{{ path('utilisateurs') }}"> Liste des utilisateurs </a> </li>
-                    <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
-                    {% endif %}
+	<body>
+		<nav>
+			<div class="nav-wrapper">
+				<div class="container">
 
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <br/><br/>
-    <hr/>
-    <br/>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						{% if app.user %}
+							<li>
+								<a href="{{ path('accueil_perso', {'slug': 'utilisateurs.slug'}) }}">
+									Aller à ma page perso
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('utilisateur_perso', {'slug': 'utilisateur.slug'}) }}">Consulter mes données personnelles></li>
+							</li>
+							<li>
+								<a href="{{ path('index') }}">
+									accueil
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('messages') }}">
+									Liste de mes messages
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('app_logout') }}">
+									se déconnecter
+								</a>
+							</li>
+						{% else %}
+							<li>
+								<a href="{{ path('index') }}">
+									accueil
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('app_register')}}">
+									S'inscrire dans l'application
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('app_login')}}">
+									Se connecter
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('utilisateurs') }}">
+									Liste des utilisateurs
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('messages') }}">
+									Liste des messages
+								</a>
+							</li>
+						{% endif %}
 
-    {% block content %}
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<br/><br/>
+		<hr/>
+		<br/>
 
-    {% endblock %}
+		{% block content %}{% endblock %}
 
-    <br/><br/>
-    <br/>
-    <hr/>
-    <br/>
+		<br/><br/>
+		<br/>
+		<hr/>
+		<br/>
 
-{# {% block footer %} #}
-    <footer>
-    <ul>
-    <li><a href="{{ path('apropos') }}"> à propos de cette application </a></li>
-    <li><a href="{{ path('index') }}"> Revenir à la page d'accueil </a></li>
-    </ul>
-    </footer>
-    {# {% endblock %} #}
+		{# {% block footer %} #}
+		<footer>
+			<ul>
+				<li><a href="{{ path('apropos') }}">à propos de cette application</a></li>
+				<li><a href="{{ path('index') }}">Revenir à la page d'accueil</a></li>
+			</ul>
+		</footer>
 
-    {% block scripts %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script type="text/javascript">
-        $('select').formSelect();
-    </script>
-    {% endblock %}
-</body>
+		{% block scripts %}
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+			<script type="text/javascript">
+				$('select').formSelect();
+			</script>
+		{% endblock %}
+	</body>
 
 </html>
