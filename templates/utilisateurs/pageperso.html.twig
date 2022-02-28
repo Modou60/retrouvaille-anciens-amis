@@ -10,7 +10,7 @@
 <div class="contenu">
     <h1> Vous êtes sur votre page personnelle! </h1>
     <br /><br />
-    <p> bonjour {{ utilisateur.civilite ~ " " ~ utilisateur.nom ~ " " ~ utilisateur.prenom }} </p>
+    <p> bonjour {{ app.user.civilite ~ " " ~ app.user.nom ~ " " ~ app.user.prenom }} </p>
     <br />
     <table border="1">
          <tbody>
@@ -101,5 +101,6 @@
 <br/><br/>
 
 {% block footer %}
+
 {% endblock %}
 {% endblock %}

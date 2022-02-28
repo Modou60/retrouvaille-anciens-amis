@@ -16,10 +16,11 @@
     <nav>
         <div class="nav-wrapper">
             <div class="container">
-                <!-- <a href="{{ path('index') }}"> Accueil </a> -->
+                
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     {% if app.user %}
-                    <li><a href="{{ path('utilisateur_perso', {'login': app.user.login}) }}"> Accéder à ma page perso </a></li>
+                    <li><a href="{{ path('accueil_perso', {'slug': 'utilisateurs.slug'}) }}"> Aller à ma page perso </a></li>
+                    <li><a href="{{ path('utilisateur_perso', {'slug': 'utilisateur.slug'}) }}">Consulter mes données personnelles></li>
                     <li><a href="{{ path('index') }}"> accueil </a></li>
                     <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
                     <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
@@ -31,24 +32,31 @@
                     <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
                     {% endif %}
 
-                    {% if 'register' == app.request.attributes.get('_route') %}
-                    <li><a href="{{ path('index') }}"> accueil </a></li>
-                    <li><a href="{{ path('utilisateurs') }}"> Liste des utilisateurs </a> </li>
-                    <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
-                    {% endif %}
-                    {% if 'login' == app.request.attributes.get('_route') %}
-                    <li><a href="{{ path('index') }}"> accueil </a></li>
-                    <li><a href="{{ path('utilisateurs') }}"> Liste des utilisateurs </a> </li>
-                    <li><a href="{{ path('messages') }}"> Liste des messages </a> </li>
-                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
+    <br/><br/>
+    <hr/>
+    <br/>
 
     {% block content %}
 
     {% endblock %}
+
+    <br/><br/>
+    <br/>
+    <hr/>
+    <br/>
+
+{# {% block footer %} #}
+    <footer>
+    <ul>
+    <li><a href="{{ path('apropos') }}"> à propos de cette application </a></li>
+    <li><a href="{{ path('index') }}"> Revenir à la page d'accueil </a></li>
+    </ul>
+    </footer>
+    {# {% endblock %} #}
 
     {% block scripts %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>

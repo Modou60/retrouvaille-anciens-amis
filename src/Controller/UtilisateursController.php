@@ -12,6 +12,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
 use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
+use Symfony\Component\Security\Core\User\User;
+use Symfony\Component\Security\Core\User\UserInterface;
+use PHPUnit\TextUI\XmlConfiguration\Logging\Logging;
+use App\Entity\Messages;
 
 /**
  * @Route("/utilisateurs")
@@ -20,12 +24,11 @@ class UtilisateursController extends AbstractController
 {
     /**
      * @Route("/", name="utilisateurs")
-     */
-public function index(UtilisateursRepository $utilisateursRepo): Response
+     */public function index(UtilisateursRepository $utilisateursRepo): Response
     {
-        
+
         // recherche de tous les utilisateurs
-        
+
         $utilisateurs = $utilisateursRepo->findAll();
 
         // affichage dans twig
@@ -34,26 +37,31 @@ public function index(UtilisateursRepository $utilisateursRepo): Response
         ]);
     }
 
-    // affichage des données d'un utilisateur
+    
+    
     /**
-     * @Route("/{login}", name="utilisateur_perso", methods={"GET"})
+     * @Route("/accueil_perso/{slug}", name="accueil_perso")
      */
-public function pagePerso(Utilisateurs $utilisateurs, $login): Response
-{
-    // Envoie à twig pour afficher ses informations
-    return $this->render('utilisateurs/pageperso.html.twig', [
-        'utilisateur' => $utilisateurs,
-    ]);
-}
+    public function accueil(string $slug): Response
+    {
+        $utilisateurs = new Utilisateurs();
+        return $this->render('utilisateurs/accueil_perso.html.twig', [
+            'utilisateurs' => $utilisateurs,
+        ]);
+    }
 
-/**
- * @Route("/accueil_perso/{login}", name="accueil_perso", methods={"GET"})
- */
-public function accueil(Utilisateurs $utilisateurs, $login): Response
-{
-    return $this->render('utilisateurs/accueil_perso.html.twig', [
-        'utilisateurs' => $utilisateurs,
-    ]);
-}
+// affichage des données d'un utilisateur
+    /**
+     * @Route("/{slug}", name="utilisateur_perso", methods={"GET"})
+     */
+    public function pagePerso(string $slug): Response
+    {
+        $utilisateurs = new Utilisateurs();
+        // Envoie à twig pour afficher ses informations
+        return $this->render('utilisateurs/pageperso.html.twig', [
+            'utilisateur' => $utilisateurs,
+        ]);
+    }
+
 
 }
